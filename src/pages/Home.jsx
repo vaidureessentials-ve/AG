@@ -138,7 +138,7 @@ const Home = () => {
                 <div className="max-w-7xl w-full mx-auto">
                     <div className="text-center mb-16">
                         <span className="text-secondary text-xs font-bold tracking-[0.25em] uppercase mb-4 block">OUR COLLECTIONS</span>
-                        <h2 className="text-4xl md:text-5xl font-serif font-medium text-primary">Crafted for Love</h2>
+                        <h2 className="text-4xl md:text-5xl font-serif font-medium text-primary">Crafted With Love</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

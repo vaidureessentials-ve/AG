@@ -45,7 +45,7 @@ const Home = () => {
     };
 
     const featuredProducts = [
-        { id: 1, title: 'Botanical Collection', category: 'Bath Amenities', image: 'https://images.unsplash.com/photo-1556228552-523de130b946?q=80&w=800&auto=format&fit=crop' },
+        { id: 1, title: 'Botanical Collection', category: 'Bath Amenities', image: '/product-1.png' },
         { id: 2, title: 'Bamboo Accessories', category: 'Sustainable Essentials', image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop' },
         { id: 3, title: 'Luxury Linens', category: 'Bed & Bath', image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800&auto=format&fit=crop' },
         { id: 4, title: 'Spa Essentials', category: 'Wellness', image: 'https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=800&auto=format&fit=crop' },

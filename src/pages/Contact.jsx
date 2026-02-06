@@ -23,7 +23,7 @@ const Contact = () => {
                                 <Mail className="w-5 h-5 text-[#1a1a1a]" />
                             </div>
                             <div>
-                                <p className="text-sm text-[#1a1a1a] font-bold">Email: <span className="font-normal text-gray-600 break-all">vaidureessentials@gmail.com</span></p>
+                                <p className="text-sm text-[#1a1a1a] font-bold">Email: <a href="mailto:vaidureessentials@gmail.com" className="font-normal text-gray-600 break-all hover:text-black cursor-pointer transition-colors">vaidureessentials@gmail.com</a></p>
                             </div>
                         </div>
 
@@ -33,7 +33,7 @@ const Contact = () => {
                                 <Phone className="w-5 h-5 text-[#1a1a1a]" />
                             </div>
                             <div>
-                                <p className="text-sm text-[#1a1a1a] font-bold">Phone: <span className="font-normal text-gray-600">+91 95227 00027</span></p>
+                                <p className="text-sm text-[#1a1a1a] font-bold">Phone: <a href="tel:+919522700027" className="font-normal text-gray-600 hover:text-black cursor-pointer transition-colors">+91 95227 00027</a></p>
                             </div>
                         </div>
 
@@ -114,7 +114,7 @@ const Contact = () => {
                         <div className="pt-4">
                             <button
                                 type="button"
-                                className="w-full bg-black text-white hover:bg-gray-800 font-medium py-3 rounded-lg transition-all duration-300 shadow-lg"
+                                className="w-full bg-primary text-white hover:bg-white hover:text-black font-medium py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.01] active:scale-[0.99] cursor-pointer border border-transparent hover:border-black/10"
                             >
                                 Submit Enquiry
                             </button>

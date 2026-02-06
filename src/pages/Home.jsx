@@ -71,7 +71,7 @@ const Home = () => {
                     {/* Left Arrow */}
                     <button
                         onClick={() => scroll('left')}
-                        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-primary p-2 rounded-full shadow-md transition-all duration-300 opacity-0 group-hover/carousel:opacity-100"
+                        className="absolute left-2 md:left-4 top-16 md:top-20 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-primary p-2 rounded-full shadow-md transition-all duration-300 opacity-0 group-hover/carousel:opacity-100"
                         aria-label="Scroll Left"
                     >
                         <ChevronLeft size={24} />
@@ -80,7 +80,7 @@ const Home = () => {
                     {/* Right Arrow */}
                     <button
                         onClick={() => scroll('right')}
-                        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-primary p-2 rounded-full shadow-md transition-all duration-300 opacity-0 group-hover/carousel:opacity-100"
+                        className="absolute right-2 md:right-4 top-16 md:top-20 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-primary p-2 rounded-full shadow-md transition-all duration-300 opacity-0 group-hover/carousel:opacity-100"
                         aria-label="Scroll Right"
                     >
                         <ChevronRight size={24} />

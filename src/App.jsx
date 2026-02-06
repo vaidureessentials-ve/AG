@@ -38,7 +38,7 @@ function App() {
 
 
 
-          <Route path="/sustainability" element={<ComingSoon />} />
+          <Route path="/sustainability" element={<EcoMaterials />} />
           <Route path="/certifications" element={<Certifications />} />
           <Route path="/customization" element={<ComingSoon />} />
           <Route path="/b2bsolutions" element={<ComingSoon />} />

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Hero from '../components/Hero';
 import ProductCard from '../components/ProductCard';
-import { ChevronLeft, ChevronRight, Mail, Phone } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 
 const Home = () => {
@@ -46,10 +46,10 @@ const Home = () => {
 
     const featuredProducts = [
         { id: 1, title: 'Botanical Collection', category: 'Bath Amenities', image: '/product-1.png' },
-        { id: 2, title: 'Bamboo Accessories', category: 'Sustainable Essentials', image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop' },
+        { id: 2, title: 'Peach & Berries Conditioner', category: 'Sustainable Essentials', image: '/peach-berry-conditioner.png' },
+        { id: 5, title: 'Signature Scents', category: 'Ambience', image: '/Signature Scents.png' },
         { id: 3, title: 'Luxury Linens', category: 'Bed & Bath', image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800&auto=format&fit=crop' },
         { id: 4, title: 'Spa Essentials', category: 'Wellness', image: 'https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=800&auto=format&fit=crop' },
-        { id: 5, title: 'Signature Scents', category: 'Ambience', image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800&auto=format&fit=crop' },
         { id: 6, title: 'Cotton Robes', category: 'Comfort', image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop' },
     ];
 
@@ -93,6 +93,7 @@ const Home = () => {
                     >
                         {/* Define items with names and explicit paths */}
                         {[
+                            { id: 1, name: 'Handwash', src: '/assets/marquee-1.png' },
                             { id: 2, name: 'Body Lotion', src: '/assets/marquee-2.png' },
                             { id: 3, name: 'Shampoo', src: '/assets/marquee-3.png' },
                             { id: 4, name: 'Conditioner', src: '/assets/marquee-4.png' },
@@ -107,28 +108,16 @@ const Home = () => {
                             { id: 13, name: 'Shampoo', src: '/assets/marquee-13.png' },
                             { id: 14, name: 'Shower Gel', src: '/assets/marquee-14.png' },
                             { id: 15, name: 'Body Lotion', src: '/assets/marquee-15.png' },
-                            // Doubled for more scroll length
-                            { id: 16, name: 'Handwash', src: '/assets/marquee-1.png' },
-                            { id: 17, name: 'Body Lotion', src: '/assets/marquee-2.png' },
-                            { id: 18, name: 'Shampoo', src: '/assets/marquee-3.png' },
-                            { id: 19, name: 'Conditioner', src: '/assets/marquee-4.png' },
-                            { id: 20, name: 'Shower Gel', src: '/assets/marquee-5.png' },
-                            { id: 21, name: 'Handwash', src: '/assets/marquee-6.jpg' },
-                            { id: 22, name: 'Shower Gel', src: '/assets/marquee-7.jpg' },
-                            { id: 23, name: 'Shampoo', src: '/assets/marquee-8.jpg' },
-                            { id: 24, name: 'Conditioner', src: '/assets/marquee-9.jpg' },
-                            { id: 25, name: 'Body Lotion', src: '/assets/marquee-10.png' },
                         ].map((item) => (
-                            <div key={`item-${item.id}`} className="flex flex-col items-center flex-shrink-0 group/item min-w-[120px]">
+                            <div key={`item-${item.id}`} className="flex flex-col items-center flex-shrink-0 group/item min-w-[140px]">
                                 <img
                                     src={item.src}
                                     alt={item.name}
-                                    className="h-32 md:h-40 object-contain hover:scale-110 transition-transform duration-500 max-w-none mb-6"
+                                    className="h-44 md:h-52 w-auto object-contain hover:scale-110 transition-transform duration-500 max-w-none mb-6 flex-shrink-0"
                                 />
                                 <span className="text-secondary text-sm font-medium tracking-wider opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover/item:translate-y-0 text-center">{item.name}</span>
                             </div>
-                        ))
-                        }
+                        ))}
                     </div>
                 </div>
             </div>

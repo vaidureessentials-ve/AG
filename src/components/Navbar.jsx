@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
-import product1Img from '/product-1.png';
-import product2Img from '/product-2.png';
-import product3Img from '/product-3.png';
+
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [expandedItem, setExpandedItem] = useState(null);
-    const location = useLocation();
+
 
     const toggleSubmenu = (name) => {
         setExpandedItem(expandedItem === name ? null : name);
@@ -48,8 +46,8 @@ const Navbar = () => {
                         <div className="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-2xl transition-all duration-300 transform origin-top opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible pt-6 pb-8 px-10 z-50 mt-2 border-t border-gray-200">
                             <div className="flex flex-row gap-8">
                                 {[
-                                    { name: 'Gift Set', img: product1Img, path: '/gift-set' },
-                                    { name: 'Dry Amenity', img: product2Img, path: '/dry-amenity' },
+                                    { name: 'Gift Set', img: '/product-1.png', path: '/gift-set' },
+                                    { name: 'Dry Amenity', img: '/product-2.png', path: '/dry-amenity' },
                                     { name: 'Wet Amenity', img: '/product-3.png', path: '/wet-amenity' }
                                 ].map((product) => (
                                     <Link to={product.path} key={product.name} className="group/item flex flex-col items-center space-y-4">

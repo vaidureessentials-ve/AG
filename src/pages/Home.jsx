@@ -34,12 +34,15 @@ const Home = () => {
                 // We have 3 sets of 15 items. Reset when we reach the start of the 2nd set (item index 15)
                 const items = scrollContainer.children;
                 if (items.length >= 30) { // Ensure we have rendered enough items
+                    const firstItemOffset = items[0].offsetLeft;
                     const resetPoint = items[15].offsetLeft; // Start of the 2nd set
 
+                    // The distance to scroll is the difference between the start of set 2 and start of set 1
+                    const scrollDistance = resetPoint - firstItemOffset;
+
                     // If we've scrolled past the first set, jump back to 0 (which looks identical to resetPoint)
-                    if (scrollContainer.scrollLeft >= resetPoint) {
-                        // Maintain sub-pixel smoothness by subtracting the exact width
-                        scrollContainer.scrollLeft = scrollContainer.scrollLeft - resetPoint;
+                    if (scrollContainer.scrollLeft >= scrollDistance) {
+                        scrollContainer.scrollLeft = scrollContainer.scrollLeft - scrollDistance;
                     }
                 }
             }

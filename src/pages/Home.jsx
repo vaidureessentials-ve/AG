@@ -8,6 +8,18 @@ const Home = () => {
     const scrollContainerRef = useRef(null);
     const [isPaused, setIsPaused] = useState(false);
 
+    const scroll = (direction) => {
+        if (scrollContainerRef.current) {
+            const scrollAmount = 300;
+            const container = scrollContainerRef.current;
+            const targetScroll = container.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+            container.scrollTo({
+                left: targetScroll,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     // Auto-scroll functionality
     useEffect(() => {
         let animationFrameId;
@@ -16,14 +28,19 @@ const Home = () => {
         const animateScroll = () => {
             if (!isPaused && scrollContainer) {
                 // Smooth continuous scroll
-                scrollContainer.scrollLeft += 1;
+                scrollContainer.scrollLeft += 1; // Adjust speed here (e.g., 0.5 for slower, 1.5 for faster)
 
-                // Seamless loop: roughly 1/3 down (finish first set), reset to start
-                // We have 3 identical sets. When we've scrolled past the first set, 
-                // we can jump back to the start (0) seamlessly because set 2 starts exactly like set 1.
-                // We typically check if scrollLeft >= scrollWidth / 3
-                if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 3) {
-                    scrollContainer.scrollLeft = 0;
+                // Seamless loop: Measure exactly where the second set starts
+                // We have 3 sets of 15 items. Reset when we reach the start of the 2nd set (item index 15)
+                const items = scrollContainer.children;
+                if (items.length >= 30) { // Ensure we have rendered enough items
+                    const resetPoint = items[15].offsetLeft; // Start of the 2nd set
+
+                    // If we've scrolled past the first set, jump back to 0 (which looks identical to resetPoint)
+                    if (scrollContainer.scrollLeft >= resetPoint) {
+                        // Maintain sub-pixel smoothness by subtracting the exact width
+                        scrollContainer.scrollLeft = scrollContainer.scrollLeft - resetPoint;
+                    }
                 }
             }
             animationFrameId = requestAnimationFrame(animateScroll);
@@ -34,15 +51,6 @@ const Home = () => {
         return () => cancelAnimationFrame(animationFrameId);
     }, [isPaused]);
 
-    const scroll = (direction) => {
-        if (scrollContainerRef.current) {
-            const scrollAmount = 300;
-            scrollContainerRef.current.scrollBy({
-                left: direction === 'left' ? -scrollAmount : scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-    };
 
     const featuredProducts = [
         { id: 1, title: 'Botanical Collection', category: 'Bath Amenities', image: '/product-1.png' },
@@ -71,7 +79,7 @@ const Home = () => {
                     {/* Left Arrow */}
                     <button
                         onClick={() => scroll('left')}
-                        className="absolute left-2 md:left-4 top-16 md:top-20 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-primary p-2 rounded-full shadow-md transition-all duration-300 opacity-0 group-hover/carousel:opacity-100"
+                        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-primary p-2 rounded-full shadow-md transition-all duration-300 opacity-0 group-hover/carousel:opacity-100"
                         aria-label="Scroll Left"
                     >
                         <ChevronLeft size={24} />
@@ -80,7 +88,7 @@ const Home = () => {
                     {/* Right Arrow */}
                     <button
                         onClick={() => scroll('right')}
-                        className="absolute right-2 md:right-4 top-16 md:top-20 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-primary p-2 rounded-full shadow-md transition-all duration-300 opacity-0 group-hover/carousel:opacity-100"
+                        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-primary p-2 rounded-full shadow-md transition-all duration-300 opacity-0 group-hover/carousel:opacity-100"
                         aria-label="Scroll Right"
                     >
                         <ChevronRight size={24} />
@@ -88,11 +96,13 @@ const Home = () => {
 
                     <div
                         ref={scrollContainerRef}
-                        className="flex overflow-x-auto scrollbar-hide scroll-smooth gap-x-16 px-4 pb-4"
+                        className="flex overflow-x-auto scrollbar-hide scroll-smooth gap-x-16 px-4 pb-4 items-center"
                         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                     >
                         {/* Define items with names and explicit paths */}
+                        {/* Tripling the array for seamless infinite scroll (1/3 logic) */}
                         {[
+                            // Set 1
                             { id: 1, name: 'Handwash', src: '/assets/marquee-1.png' },
                             { id: 2, name: 'Body Lotion', src: '/assets/marquee-2.png' },
                             { id: 3, name: 'Shampoo', src: '/assets/marquee-3.png' },
@@ -108,6 +118,38 @@ const Home = () => {
                             { id: 13, name: 'Shampoo', src: '/assets/marquee-13.png' },
                             { id: 14, name: 'Shower Gel', src: '/assets/marquee-14.png' },
                             { id: 15, name: 'Body Lotion', src: '/assets/marquee-15.png' },
+                            // Set 2
+                            { id: 16, name: 'Handwash', src: '/assets/marquee-1.png' },
+                            { id: 17, name: 'Body Lotion', src: '/assets/marquee-2.png' },
+                            { id: 18, name: 'Shampoo', src: '/assets/marquee-3.png' },
+                            { id: 19, name: 'Conditioner', src: '/assets/marquee-4.png' },
+                            { id: 20, name: 'Shower Gel', src: '/assets/marquee-5.png' },
+                            { id: 21, name: 'Handwash', src: '/assets/marquee-6.jpg' },
+                            { id: 22, name: 'Shower Gel', src: '/assets/marquee-7.jpg' },
+                            { id: 23, name: 'Shampoo', src: '/assets/marquee-8.jpg' },
+                            { id: 24, name: 'Conditioner', src: '/assets/marquee-9.jpg' },
+                            { id: 25, name: 'Body Lotion', src: '/assets/marquee-10.png' },
+                            { id: 26, name: 'Conditioner', src: '/assets/marquee-11.png' },
+                            { id: 27, name: 'Handwash', src: '/assets/marquee-12.png' },
+                            { id: 28, name: 'Shampoo', src: '/assets/marquee-13.png' },
+                            { id: 29, name: 'Shower Gel', src: '/assets/marquee-14.png' },
+                            { id: 30, name: 'Body Lotion', src: '/assets/marquee-15.png' },
+                            // Set 3
+                            { id: 31, name: 'Handwash', src: '/assets/marquee-1.png' },
+                            { id: 32, name: 'Body Lotion', src: '/assets/marquee-2.png' },
+                            { id: 33, name: 'Shampoo', src: '/assets/marquee-3.png' },
+                            { id: 34, name: 'Conditioner', src: '/assets/marquee-4.png' },
+                            { id: 35, name: 'Shower Gel', src: '/assets/marquee-5.png' },
+                            { id: 36, name: 'Handwash', src: '/assets/marquee-6.jpg' },
+                            { id: 37, name: 'Shower Gel', src: '/assets/marquee-7.jpg' },
+                            { id: 38, name: 'Shampoo', src: '/assets/marquee-8.jpg' },
+                            { id: 39, name: 'Conditioner', src: '/assets/marquee-9.jpg' },
+                            { id: 40, name: 'Body Lotion', src: '/assets/marquee-10.png' },
+                            { id: 41, name: 'Conditioner', src: '/assets/marquee-11.png' },
+                            { id: 42, name: 'Handwash', src: '/assets/marquee-12.png' },
+                            { id: 43, name: 'Shampoo', src: '/assets/marquee-13.png' },
+                            { id: 44, name: 'Shower Gel', src: '/assets/marquee-14.png' },
+                            { id: 45, name: 'Body Lotion', src: '/assets/marquee-15.png' },
                         ].map((item) => (
                             <div key={`item-${item.id}`} className="flex flex-col items-center flex-shrink-0 group/item min-w-[140px]">
                                 <img

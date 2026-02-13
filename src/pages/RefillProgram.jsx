@@ -31,7 +31,7 @@ const RefillProgram = () => {
                         <img
                             src="/bulk-refill-solutions.png"
                             alt="Bulk Refill Solutions showing refill packs and containers"
-                            className="w-full h-[500px] object-cover shadow-lg"
+                            className="w-full h-[600px] object-cover shadow-lg"
                         />
                     </div>
                 </div>
@@ -43,7 +43,7 @@ const RefillProgram = () => {
                         <img
                             src="/lower-packaging-waste.png"
                             alt="Lower Packaging Waste showing refill systems"
-                            className="w-full h-[500px] object-cover shadow-lg"
+                            className="w-full h-[600px] object-cover shadow-lg"
                         />
                     </div>
 
@@ -75,7 +75,7 @@ const RefillProgram = () => {
                         <img
                             src="/cost-efficient-sustainable.png"
                             alt="Cost-Efficient & Sustainable showing refill solutions"
-                            className="w-full h-[500px] object-cover shadow-lg"
+                            className="w-full h-[600px] object-cover shadow-lg"
                         />
                     </div>
                 </div>

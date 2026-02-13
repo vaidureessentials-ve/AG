@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Hero from '../components/Hero';
 import ProductCard from '../components/ProductCard';
+
+import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 
@@ -55,14 +57,18 @@ const Home = () => {
     }, [isPaused]);
 
 
+
+
+
     const featuredProducts = [
-        { id: 1, title: 'Botanical Collection', category: 'Bath Amenities', image: '/product-1.png' },
-        { id: 2, title: 'Peach & Berries Conditioner', category: 'Sustainable Essentials', image: '/peach-berry-conditioner.png' },
-        { id: 5, title: 'Signature Scents', category: 'Ambience', image: '/Signature Scents.png' },
-        { id: 3, title: 'Luxury Linens', category: 'Bed & Bath', image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800&auto=format&fit=crop' },
-        { id: 4, title: 'Spa Essentials', category: 'Wellness', image: 'https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=800&auto=format&fit=crop' },
-        { id: 6, title: 'Cotton Robes', category: 'Comfort', image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop' },
+        { id: 1, title: 'Luxury Welcome Kit', category: 'GUEST ESSENTIALS', image: '/botanical-collection.png', link: '/gift-set' },
+        { id: 2, title: 'Peach & Berries', category: 'PREMIUM COLLECTION', image: '/peach-berry-conditioner.png', link: '/gift-set' },
+        { id: 3, title: 'Glow Naturally', category: 'PURE ELEGANCE', image: '/ss-image.png', link: '/gift-set' },
+        { id: 4, title: 'Luxury Linens', category: 'Bed & Bath', image: '/luxury-linens.png', link: '/hotel-resort-amenity' },
+        { id: 5, title: 'Essentials', category: 'Wellness', image: '/essentials.png', link: '/hotel-resort-amenity' },
+        { id: 6, title: 'Resort', category: 'Comfort', image: '/cotton.png', link: '/hotel-resort-amenity' },
     ];
+
 
     return (
         <div className="animate-fade-in mt-20">
@@ -177,7 +183,7 @@ const Home = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* Wet Amenities */}
-                        <div className="group relative cursor-pointer">
+                        <Link to="/wet-amenity" className="group relative cursor-pointer block">
                             <div className="overflow-hidden aspect-[4/3] mb-4">
                                 <img
                                     src="/product-3.png"
@@ -188,15 +194,15 @@ const Home = () => {
                             <div className="absolute bottom-8 left-8 text-white z-10">
                                 <h3 className="text-2xl font-serif font-medium mb-1 drop-shadow-md">Wet Amenities</h3>
                                 <p className="text-sm text-white/90 mb-3 drop-shadow-md font-light">Premium shampoos, conditioners, and body care</p>
-                                <a href="/products" className="text-xs font-bold tracking-widest border-b border-white pb-1 inline-block hover:text-white/80 transition-colors drop-shadow-md">
+                                <span className="text-xs font-bold tracking-widest border-b border-white pb-1 inline-block hover:text-white/80 transition-colors drop-shadow-md">
                                     VIEW COLLECTION →
-                                </a>
+                                </span>
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80 pointer-events-none"></div>
-                        </div>
+                        </Link>
 
                         {/* Dry Amenities */}
-                        <div className="group relative cursor-pointer">
+                        <Link to="/dry-amenity" className="group relative cursor-pointer block">
                             <div className="overflow-hidden aspect-[4/3] mb-4">
                                 <img
                                     src="/product-2.png"
@@ -207,15 +213,15 @@ const Home = () => {
                             <div className="absolute bottom-8 left-8 text-white z-10">
                                 <h3 className="text-2xl font-serif font-medium mb-1 drop-shadow-md">Dry Amenities</h3>
                                 <p className="text-sm text-white/90 mb-3 drop-shadow-md font-light">Complete guest care kits for hotels</p>
-                                <a href="/products" className="text-xs font-bold tracking-widest border-b border-white pb-1 inline-block hover:text-white/80 transition-colors drop-shadow-md">
+                                <span className="text-xs font-bold tracking-widest border-b border-white pb-1 inline-block hover:text-white/80 transition-colors drop-shadow-md">
                                     VIEW COLLECTION →
-                                </a>
+                                </span>
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80 pointer-events-none"></div>
-                        </div>
+                        </Link>
 
-                        {/* Body Care */}
-                        <div className="group relative cursor-pointer">
+                        {/* Gift Set */}
+                        <Link to="/gift-set" className="group relative cursor-pointer block">
                             <div className="overflow-hidden aspect-[4/3] mb-4">
                                 <img
                                     src="/product-1.png"
@@ -226,12 +232,12 @@ const Home = () => {
                             <div className="absolute bottom-8 left-8 text-white z-10">
                                 <h3 className="text-2xl font-serif font-medium mb-1 drop-shadow-md">Gift Set</h3>
                                 <p className="text-sm text-white/90 mb-3 drop-shadow-md font-light">Luxury personal care collection</p>
-                                <a href="/products" className="text-xs font-bold tracking-widest border-b border-white pb-1 inline-block hover:text-white/80 transition-colors drop-shadow-md">
+                                <span className="text-xs font-bold tracking-widest border-b border-white pb-1 inline-block hover:text-white/80 transition-colors drop-shadow-md">
                                     VIEW COLLECTION →
-                                </a>
+                                </span>
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80 pointer-events-none"></div>
-                        </div>
+                        </Link>
                     </div>
 
 
@@ -258,15 +264,18 @@ const Home = () => {
                                 title={product.title}
                                 category={product.category}
                                 image={product.image}
+                                link={product.link}
                             />
                         ))}
                     </div>
 
                     <div className="mt-12 text-center md:hidden">
-                        <a href="/products" className="inline-block border-b border-primary pb-1 font-medium">VIEW ALL COLLECTIONS</a>
+                        <a href="/gift-set" className="inline-block border-b border-primary pb-1 font-medium">VIEW ALL COLLECTIONS</a>
                     </div>
                 </div>
             </section>
+
+
 
 
 

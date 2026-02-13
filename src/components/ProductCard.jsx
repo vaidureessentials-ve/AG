@@ -13,7 +13,7 @@ const ProductCard = ({ title, image, category, link }) => {
                     />
                 )}
             </div>
-            <div className={`absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 ${image ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
+            <div className={`absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300`}>
                 <span className="text-white/80 text-xs tracking-widest uppercase mb-1">{category}</span>
                 <h3 className="text-white text-xl font-serif mb-4">{title}</h3>
                 <span className="text-white text-sm font-medium underline underline-offset-4">Discover</span>

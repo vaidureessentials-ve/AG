@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="bg-[#121212] text-white py-12 border-t border-gray-800 font-sans">
-            <div className="max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
+        <footer className="bg-[#121212] text-white pt-10 pb-6 border-t border-gray-800 font-sans">
+            <div className="max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
 
                 {/* Brand Column */}
                 <div className="flex flex-col items-center md:items-start space-y-6">
@@ -36,10 +36,10 @@ const Footer = () => {
                 <div>
                     <h3 className="text-sm font-bold text-white tracking-widest uppercase mb-8">PRODUCTS</h3>
                     <ul className="space-y-4 text-white text-sm">
-                        <li><Link to="/products" className="hover:opacity-80 transition-opacity block">Wet Amenities</Link></li>
-                        <li><Link to="/products" className="hover:opacity-80 transition-opacity block">Dry Amenities</Link></li>
-                        <li><Link to="/products" className="hover:opacity-80 transition-opacity block">Gift Sets</Link></li>
-                        <li><Link to="/products" className="hover:opacity-80 transition-opacity block">Customization</Link></li>
+                        <li><Link to="/wet-amenity" className="hover:opacity-80 transition-opacity block">Wet Amenities</Link></li>
+                        <li><Link to="/dry-amenity" className="hover:opacity-80 transition-opacity block">Dry Amenities</Link></li>
+                        <li><Link to="/gift-set" className="hover:opacity-80 transition-opacity block">Gift Sets</Link></li>
+                        <li><Link to="/private-label" className="hover:opacity-80 transition-opacity block">Customization</Link></li>
                     </ul>
                 </div>
 
@@ -49,7 +49,7 @@ const Footer = () => {
                     <ul className="space-y-4 text-white text-sm">
                         <li><Link to="/about" className="hover:opacity-80 transition-opacity block">About Us</Link></li>
                         <li><Link to="/eco-materials" className="hover:opacity-80 transition-opacity block">Sustainability</Link></li>
-                        <li><Link to="/contact" className="hover:opacity-80 transition-opacity block">B2B Solutions</Link></li>
+                        <li><Link to="/hotel-resort-amenity" className="hover:opacity-80 transition-opacity block">B2BSolutions</Link></li>
                         <li><Link to="/contact" className="hover:opacity-80 transition-opacity block">Contact Us</Link></li>
                     </ul>
                 </div>
@@ -65,7 +65,7 @@ const Footer = () => {
                             <a href="tel:+919522700027" className="hover:opacity-80 transition-opacity block">+91 95227 00027</a>
                         </p>
                         <p className="pt-2">
-                            Orbit, Vijay Nagar, Scheme 54 PU4<br />
+                            Orbit Mall, Vijay Nagar, Scheme 54 PU4<br />
                             Indore, Madhya Pradesh 452010
                         </p>
                     </div>
@@ -73,7 +73,7 @@ const Footer = () => {
             </div>
 
             {/* Copyright */}
-            <div className="max-w-7xl w-full mx-auto px-6 mt-8 pt-8 border-t border-gray-800 text-center text-xs text-white">
+            <div className="max-w-7xl w-full mx-auto px-6 mt-8 pt-8 border-t border-gray-800 flex justify-center items-center text-xs text-white">
                 <p className="uppercase tracking-wider">© 2026 VAIDURE. All rights reserved.</p>
             </div>
         </footer>

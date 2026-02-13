@@ -36,11 +36,12 @@ const Navbar = () => {
                 <div className="hidden md:flex items-center space-x-8">
                     {/* Products with Mega Menu */}
                     <div className="relative group h-full flex items-center">
-                        <span
-                            className="transition-colors font-medium text-sm tracking-wide py-6 text-black hover:text-secondary cursor-default"
+                        <Link
+                            to="/gift-set"
+                            className="transition-colors font-medium text-sm tracking-wide py-6 text-black hover:text-secondary flex items-center h-full"
                         >
                             Products
-                        </span>
+                        </Link>
 
                         {/* Dropdown Menu */}
                         <div className="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-2xl transition-all duration-300 transform origin-top opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible pt-6 pb-8 px-10 z-50 mt-2 border-t border-gray-200">
@@ -70,11 +71,12 @@ const Navbar = () => {
 
                     {/* Sustainability with Dropdown */}
                     <div className="relative group h-full flex items-center">
-                        <span
-                            className="transition-colors font-medium text-sm tracking-wide py-6 text-black hover:text-secondary cursor-default"
+                        <Link
+                            to="/eco-materials"
+                            className="transition-colors font-medium text-sm tracking-wide py-6 text-black hover:text-secondary cursor-pointer"
                         >
                             Sustainability
-                        </span>
+                        </Link>
 
                         {/* Dropdown Menu */}
                         <div className="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-2xl transition-all duration-300 transform origin-top opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible pt-4 pb-6 px-8 z-50 min-w-[190px] mt-2 border-t border-gray-200">
@@ -103,11 +105,12 @@ const Navbar = () => {
 
                     {/* Customization with Dropdown */}
                     <div className="relative group h-full flex items-center">
-                        <span
-                            className="transition-colors font-medium text-sm tracking-wide py-6 text-black hover:text-secondary cursor-default"
+                        <Link
+                            to="/private-label"
+                            className="transition-colors font-medium text-sm tracking-wide py-6 text-black hover:text-secondary cursor-pointer"
                         >
                             Customization
-                        </span>
+                        </Link>
 
                         {/* Dropdown Menu */}
                         <div className="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-2xl transition-all duration-300 transform origin-top opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible pt-4 pb-6 px-8 z-50 min-w-[180px] mt-2 border-t border-gray-200">
@@ -136,26 +139,27 @@ const Navbar = () => {
 
                     {/* B2BSolutions with Dropdown */}
                     <div className="relative group h-full flex items-center">
-                        <span
-                            className="transition-colors font-medium text-sm tracking-wide py-6 text-black hover:text-secondary cursor-default"
+                        <Link
+                            to="/hotel-resort-amenity"
+                            className="transition-colors font-medium text-sm tracking-wide py-6 text-black hover:text-secondary cursor-pointer"
                         >
                             B2BSolutions
-                        </span>
+                        </Link>
 
                         {/* Dropdown Menu */}
                         <div className="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-2xl transition-all duration-300 transform origin-top opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible pt-4 pb-6 px-8 z-50 min-w-[240px] mt-2 border-t border-gray-200">
                             <div className="flex flex-col gap-3">
                                 {[
-                                    'Hotel & Resort Amenity',
-                                    'Corporate Gifting',
-                                    'Hospital Amenities'
+                                    { name: 'Hotel & Resort Amenity', path: '/hotel-resort-amenity' },
+                                    { name: 'Corporate Gifting', path: '/corporate-gifting' },
+                                    { name: 'Hospital Amenities', path: '/hospital-amenities' }
                                 ].map((item) => (
                                     <Link
-                                        to="/coming-soon"
-                                        key={item}
+                                        to={item.path}
+                                        key={item.name}
                                         className="text-black text-sm font-serif tracking-wide hover:text-secondary transition-colors duration-300 py-2 border-b border-black/10 last:border-0"
                                     >
-                                        {item}
+                                        {item.name}
                                     </Link>
                                 ))}
                             </div>
@@ -211,9 +215,9 @@ const Navbar = () => {
                         {
                             name: 'B2BSolutions',
                             subItems: [
-                                { name: 'Hotel & Resort Amenity', path: '/coming-soon' },
-                                { name: 'Corporate Gifting', path: '/coming-soon' },
-                                { name: 'Hospital Amenities', path: '/coming-soon' }
+                                { name: 'Hotel & Resort Amenity', path: '/hotel-resort-amenity' },
+                                { name: 'Corporate Gifting', path: '/corporate-gifting' },
+                                { name: 'Hospital Amenities', path: '/hospital-amenities' }
                             ]
                         },
                         { name: 'About Us', path: '/about' },

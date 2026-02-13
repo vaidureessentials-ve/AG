@@ -6,7 +6,6 @@ import Home from './pages/Home';
 import Products from './pages/Products';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import ComingSoon from './pages/ComingSoon';
 import EcoMaterials from './pages/EcoMaterials';
 import Packaging from './pages/Packaging';
 import PrivateLabel from './pages/PrivateLabel';
@@ -16,17 +15,22 @@ import Certifications from './pages/Certifications';
 import GiftSet from './pages/GiftSet';
 import DryAmenity from './pages/DryAmenity';
 import WetAmenity from './pages/WetAmenity';
+import HotelResortAmenity from './pages/HotelResortAmenity';
+import CorporateGifting from './pages/CorporateGifting';
+import HospitalAmenities from './pages/HospitalAmenities';
+import PopupContactForm from './components/PopupContactForm';
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen font-sans text-primary bg-background selection:bg-blue-500 selection:text-white">
       <Navbar />
+      <PopupContactForm />
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<ComingSoon />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/about" element={<About />} />
-          <Route path="/coming-soon" element={<ComingSoon />} />
+          <Route path="/coming-soon" element={<GiftSet />} />
           <Route path="/eco-materials" element={<EcoMaterials />} />
           <Route path="/packaging" element={<Packaging />} />
           <Route path="/private-label" element={<PrivateLabel />} />
@@ -40,9 +44,12 @@ function App() {
 
           <Route path="/sustainability" element={<EcoMaterials />} />
           <Route path="/certifications" element={<Certifications />} />
-          <Route path="/customization" element={<ComingSoon />} />
-          <Route path="/b2bsolutions" element={<ComingSoon />} />
-          <Route path="/aboutus" element={<ComingSoon />} />
+          <Route path="/customization" element={<PrivateLabel />} />
+          <Route path="/hotel-resort-amenity" element={<HotelResortAmenity />} />
+          <Route path="/corporate-gifting" element={<CorporateGifting />} />
+          <Route path="/hospital-amenities" element={<HospitalAmenities />} />
+          <Route path="/b2bsolutions" element={<CorporateGifting />} />
+          <Route path="/aboutus" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>

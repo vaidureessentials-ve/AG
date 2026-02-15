@@ -62,11 +62,8 @@ const Home = () => {
 
     const featuredProducts = [
         { id: 1, title: 'Luxury Welcome Kit', category: 'GUEST ESSENTIALS', image: '/botanical-collection.png', link: '/gift-set' },
-        { id: 2, title: 'Peach & Berries', category: 'PREMIUM COLLECTION', image: '/peach-berry-conditioner.png', link: '/gift-set' },
-        { id: 3, title: 'Glow Naturally', category: 'PURE ELEGANCE', image: '/ss-image.png', link: '/gift-set' },
-        { id: 4, title: 'Luxury Linens', category: 'Bed & Bath', image: '/luxury-linens.png', link: '/hotel-resort-amenity' },
-        { id: 5, title: 'Essentials', category: 'Wellness', image: '/essentials.png', link: '/hotel-resort-amenity' },
-        { id: 6, title: 'Resort', category: 'Comfort', image: '/cotton.png', link: '/hotel-resort-amenity' },
+        { id: 2, title: 'Peach & Berries', category: 'PREMIUM COLLECTION', image: '/peach-berry-conditioner.png', link: '/wet-amenity' },
+        { id: 3, title: 'Glow Naturally', category: 'PURE ELEGANCE', image: '/ss-image.png', link: '/dry-amenity' },
     ];
 
 
@@ -252,9 +249,9 @@ const Home = () => {
                             <span className="text-secondary text-sm tracking-widest uppercase mb-2 block">Curated Selection</span>
                             <h2 className="text-3xl md:text-4xl font-serif">Featured Collections</h2>
                         </div>
-                        <a href="/products" className="hidden md:inline-block text-primary hover:text-secondary border-b border-primary hover:border-secondary transition-colors pb-1 text-sm font-medium tracking-wide mt-6">
+                        <Link to="/products" className="hidden md:inline-block text-primary hover:text-secondary border-b border-primary hover:border-secondary transition-colors pb-1 text-sm font-medium tracking-wide mt-6">
                             VIEW ALL
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -270,7 +267,7 @@ const Home = () => {
                     </div>
 
                     <div className="mt-12 text-center md:hidden">
-                        <a href="/gift-set" className="inline-block border-b border-primary pb-1 font-medium">VIEW ALL COLLECTIONS</a>
+                        <Link to="/products" className="inline-block border-b border-primary pb-1 font-medium">VIEW ALL COLLECTIONS</Link>
                     </div>
                 </div>
             </section>

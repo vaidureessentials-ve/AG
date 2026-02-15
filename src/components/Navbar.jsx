@@ -37,7 +37,7 @@ const Navbar = () => {
                     {/* Products with Mega Menu */}
                     <div className="relative group h-full flex items-center">
                         <Link
-                            to="/gift-set"
+                            to="/products"
                             className="transition-colors font-medium text-sm tracking-wide py-6 text-black hover:text-secondary flex items-center h-full"
                         >
                             Products

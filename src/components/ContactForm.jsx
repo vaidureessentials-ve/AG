@@ -11,7 +11,8 @@ const ContactForm = () => {
                     <input
                         type="text"
                         id="name"
-                        className="w-full bg-white/5 border border-white/20 rounded p-2 text-white placeholder-white/50 focus:outline-none focus:border-white transition-colors"
+                        className="w-full bg-white/5 border border-white/20 rounded p-2 text-white placeholder-white/50 focus:outline-none focus:border-white transition-colors [&:-webkit-autofill]:bg-transparent [&:-webkit-autofill]:[-webkit-text-fill-color:white] [&:-webkit-autofill]:transition-all [&:-webkit-autofill]:duration-[9999s]"
+                        placeholder="Enter Name"
                         required
                     />
                 </div>
@@ -21,7 +22,8 @@ const ContactForm = () => {
                     <input
                         type="tel"
                         id="phone"
-                        className="w-full bg-white/5 border border-white/20 rounded p-2 text-white placeholder-white/50 focus:outline-none focus:border-white transition-colors"
+                        className="w-full bg-white/5 border border-white/20 rounded p-2 text-white placeholder-white/50 focus:outline-none focus:border-white transition-colors [&:-webkit-autofill]:bg-transparent [&:-webkit-autofill]:[-webkit-text-fill-color:white] [&:-webkit-autofill]:transition-all [&:-webkit-autofill]:duration-[9999s]"
+                        placeholder="Enter Phone Number"
                         required
                     />
                 </div>
@@ -31,7 +33,8 @@ const ContactForm = () => {
                     <input
                         type="email"
                         id="email"
-                        className="w-full bg-white/5 border border-white/20 rounded p-2 text-white placeholder-white/50 focus:outline-none focus:border-white transition-colors"
+                        className="w-full bg-white/5 border border-white/20 rounded p-2 text-white placeholder-white/50 focus:outline-none focus:border-white transition-colors [&:-webkit-autofill]:bg-transparent [&:-webkit-autofill]:[-webkit-text-fill-color:white] [&:-webkit-autofill]:transition-all [&:-webkit-autofill]:duration-[9999s]"
+                        placeholder="Enter Email Address"
                         required
                     />
                 </div>
@@ -42,6 +45,7 @@ const ContactForm = () => {
                         id="message"
                         rows="2"
                         className="w-full bg-white/5 border border-white/20 rounded p-2 text-white placeholder-white/50 focus:outline-none focus:border-white transition-colors resize-none"
+                        placeholder="Enter Message"
                         required
                     ></textarea>
                 </div>

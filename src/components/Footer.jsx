@@ -59,7 +59,7 @@ const Footer = () => {
                     <h3 className="text-sm font-bold text-white tracking-widest uppercase mb-8">GET IN TOUCH</h3>
                     <div className="text-white space-y-4 text-sm leading-relaxed">
                         <p>
-                            <a href="mailto:support@vaidure.com" className="hover:opacity-80 transition-opacity block mb-1">support@vaidure.com</a>
+                            <a href="mailto:info@vaidure.com" className="hover:opacity-80 transition-opacity block mb-1">info@vaidure.com</a>
                         </p>
                         <p>
                             <a href="tel:+919522700027" className="hover:opacity-80 transition-opacity block">+91 95227 00027</a>

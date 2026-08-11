@@ -15,7 +15,7 @@ const PopupContactForm = () => {
             if (!hasClosed) {
                 setIsVisible(true);
             }
-        }, 5000);
+        }, 15000);
 
         return () => clearTimeout(timer);
     }, [hasClosed]);
@@ -68,6 +68,7 @@ const PopupContactForm = () => {
                                     type="text"
                                     id="popup-name"
                                     className="w-full bg-gray-50 border border-gray-200 rounded p-2 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm"
+                                    placeholder="Enter Name"
                                     required
                                 />
                             </div>
@@ -79,6 +80,7 @@ const PopupContactForm = () => {
                                         type="tel"
                                         id="popup-phone"
                                         className="w-full bg-gray-50 border border-gray-200 rounded p-2 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm"
+                                        placeholder="Enter Phone Number"
                                         required
                                     />
                                 </div>
@@ -88,6 +90,7 @@ const PopupContactForm = () => {
                                         type="email"
                                         id="popup-email"
                                         className="w-full bg-gray-50 border border-gray-200 rounded p-2 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm"
+                                        placeholder="Enter Email Address"
                                         required
                                     />
                                 </div>
@@ -98,7 +101,8 @@ const PopupContactForm = () => {
                                 <textarea
                                     id="popup-message"
                                     rows="3"
-                                    className="w-full bg-gray-50 border border-gray-200 rounded p-2 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none text-sm"
+                                    className="w-full bg-gray-50 border border-gray-200 rounded p-2 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm resize-none"
+                                    placeholder="Enter Message"
                                     required
                                 ></textarea>
                             </div>

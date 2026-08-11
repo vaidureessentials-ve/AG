@@ -8,7 +8,7 @@ const Hero = () => {
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-100 py-24 md:py-0">
             {/* Background Image Placeholder or Color */}
             <div className="absolute inset-0 z-0">
-                <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }}></div>
+                <img src={heroBg} alt="Hero Background" className="w-full h-full object-cover object-center" />
                 <div className="absolute inset-0 bg-black/30"></div> {/* Overlay */}
             </div>
 

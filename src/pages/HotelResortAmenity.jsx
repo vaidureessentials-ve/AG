@@ -33,30 +33,32 @@ const HotelResortAmenity = () => {
             </div>
 
             {/* Introduction Section */}
-            <div className="py-20 md:py-32 px-6 bg-white">
+            <div className="py-32 px-6 bg-white animate-fade-in-up">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
                     <div className="w-full md:w-1/2">
                         <img
                             src="/CraftingMemorable.png"
                             alt="Luxury Amenity Set"
-                            className="w-full h-auto object-cover rounded-sm shadow-xl"
+                            className="w-full h-auto object-cover"
                         />
                     </div>
-                    <div className="w-full md:w-1/2 space-y-6">
-                        <span className="text-secondary text-sm tracking-widest uppercase">Exquisite Quality</span>
-                        <h2 className="text-3xl md:text-4xl font-serif text-primary">
+                    <div className="w-full md:w-1/2 space-y-8">
+                        <span className="text-secondary text-xs tracking-[0.25em] font-bold uppercase block">Exquisite Quality</span>
+                        <h2 className="text-4xl md:text-5xl font-serif text-primary leading-tight">
                             Crafting Memorable Stays
                         </h2>
-                        <p className="text-gray-600 leading-relaxed font-light">
-                            At Vaidure, we understand that amenities are a crucial touchpoint in the guest journey. Our Hotel & Resort collections are designed to leave a lasting impression, blending luxurious formulations with eco-conscious packaging.
-                        </p>
-                        <p className="text-gray-600 leading-relaxed font-light">
-                            From boutique hotels to expansive resorts, we offer tailored solutions that align with your brand's ethos and elevate the standard of hospitality.
-                        </p>
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                            {['Premium Ingredients', 'Eco-Friendly Packaging', 'Custom Branding', 'Bulk Supply'].map((item, index) => (
-                                <li key={index} className="flex items-center text-primary font-medium">
-                                    <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+                        <div className="space-y-6 text-primary/80 font-light text-lg leading-relaxed">
+                            <p>
+                                At VAIDURE, we understand that amenities are more than just functional items; they are a critical touchpoint in the guest journey. Our Hotel & Resort collections are meticulously designed to leave a lasting impression of luxury and care.
+                            </p>
+                            <p>
+                                By blending sensorial, plant-based formulations with sophisticated, eco-conscious packaging, we help properties elevate their brand standard. Whether you are managing a boutique urban retreat or an expansive luxury resort, we provide scalable solutions that enhance guest satisfaction while respecting the environment.
+                            </p>
+                        </div>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
+                            {['Botanical Ingredients', 'Zero-Plastic Options', 'Bespoke Branding', 'Reliable Bulk Supply'].map((item, index) => (
+                                <li key={index} className="flex items-center text-primary/80 font-light">
+                                    <span className="w-1.5 h-1.5 bg-secondary rounded-full mr-4"></span>
                                     {item}
                                 </li>
                             ))}
@@ -66,49 +68,49 @@ const HotelResortAmenity = () => {
             </div>
 
             {/* Customization / Service Section */}
-            <div className="py-20 md:py-32 px-6 bg-[#F9F8F6]">
-                <div className="max-w-7xl mx-auto text-center mb-16">
-                    <span className="text-secondary text-sm tracking-widest uppercase block mb-3">Tailored Solutions</span>
-                    <h2 className="text-3xl md:text-5xl font-serif text-primary">Why Choose Vaidure?</h2>
+            <div className="py-32 px-6 bg-paper">
+                <div className="max-w-7xl mx-auto text-center mb-20">
+                    <span className="text-secondary text-xs tracking-[0.25em] font-bold uppercase block mb-4">Tailored Solutions</span>
+                    <h2 className="text-4xl md:text-5xl font-serif text-primary">The VAIDURE Advantage</h2>
                 </div>
 
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
                     {/* Feature 1 */}
-                    <div className="bg-white p-10 text-center shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <div className="h-16 w-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                    <div className="bg-white p-12 text-center hover:shadow-lg transition-shadow duration-500">
+                        <div className="h-16 w-16 bg-background rounded-full flex items-center justify-center mx-auto mb-8 text-secondary">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                             </svg>
                         </div>
-                        <h3 className="text-xl font-serif text-primary mb-4">Custom Formulations</h3>
-                        <p className="text-gray-600 font-light text-sm leading-relaxed">
-                            Create a signature scent or specific formulation that captures the essence of your property.
+                        <h3 className="text-2xl font-serif text-primary mb-4">Custom Formulations</h3>
+                        <p className="text-primary/70 font-light text-base leading-relaxed">
+                            Work with our perfumers to create a signature scent profile or specific formulation that perfectly captures the unique essence of your property.
                         </p>
                     </div>
 
                     {/* Feature 2 */}
-                    <div className="bg-white p-10 text-center shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <div className="h-16 w-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                    <div className="bg-white p-12 text-center hover:shadow-lg transition-shadow duration-500">
+                        <div className="h-16 w-16 bg-background rounded-full flex items-center justify-center mx-auto mb-8 text-secondary">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <h3 className="text-xl font-serif text-primary mb-4">Sustainable Packaging</h3>
-                        <p className="text-gray-600 font-light text-sm leading-relaxed">
-                            Reduce your environmental footprint with our plastic-free, biodegradable, and refillable packaging options.
+                        <h3 className="text-2xl font-serif text-primary mb-4">Sustainable Design</h3>
+                        <p className="text-primary/70 font-light text-base leading-relaxed">
+                            Measurably reduce your environmental footprint with our PCR plastics, biodegradable dry amenities, and efficient large-format dispenser systems.
                         </p>
                     </div>
 
                     {/* Feature 3 */}
-                    <div className="bg-white p-10 text-center shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <div className="h-16 w-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                    <div className="bg-white p-12 text-center hover:shadow-lg transition-shadow duration-500">
+                        <div className="h-16 w-16 bg-background rounded-full flex items-center justify-center mx-auto mb-8 text-secondary">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <h3 className="text-xl font-serif text-primary mb-4">Reliable Supply</h3>
-                        <p className="text-gray-600 font-light text-sm leading-relaxed">
-                            Consistent quality and timely delivery ensuring your operations run smoothly without interruption.
+                        <h3 className="text-2xl font-serif text-primary mb-4">Operational Reliability</h3>
+                        <p className="text-primary/70 font-light text-base leading-relaxed">
+                            Benefit from consistent quality and a resilient supply chain. Our manufacturing capacity ensures your operations run smoothly without interruption.
                         </p>
                     </div>
                 </div>

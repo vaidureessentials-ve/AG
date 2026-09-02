@@ -4,10 +4,10 @@ import giftSetImg from '/product-1.png';
 
 const GiftSet = () => {
     return (
-        <div className="animate-fade-in pt-20">
+        <div className="animate-fade-in pt-20 bg-background text-primary">
             {/* Hero Section */}
-            <div className="relative h-[80vh] md:h-[90vh] flex items-center justify-center bg-[#FDFBF7] overflow-hidden">
-                <div className="absolute inset-0 bg-black/40 z-10"></div>
+            <div className="relative h-[85vh] md:h-screen flex items-center justify-center bg-paper overflow-hidden">
+                <div className="absolute inset-0 bg-black/20 z-10"></div>
                 <img
                     src="/GiftSets.png"
                     alt="Vaidure Gift Set Collection"
@@ -27,33 +27,35 @@ const GiftSet = () => {
             </div>
 
             {/* Introduction Section */}
-            <div className="py-20 px-6 bg-white">
-                <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div className="py-32 px-6 bg-white animate-fade-in-up">
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
                     <div className="w-full md:w-1/2">
                         <img
                             src={giftSetImg}
                             alt="Peach & Berries Collection"
-                            className="w-full h-auto object-cover rounded-sm shadow-xl"
+                            className="w-full h-auto object-cover"
                         />
                     </div>
-                    <div className="w-full md:w-1/2 space-y-6">
-                        <span className="text-secondary text-sm tracking-widest uppercase">Signature Collection</span>
-                        <h2 className="text-3xl md:text-4xl font-serif text-primary">
-                            Peach & Berries
+                    <div className="w-full md:w-1/2 space-y-8">
+                        <span className="text-secondary text-xs tracking-[0.25em] font-bold uppercase block">Signature Collection</span>
+                        <h2 className="text-4xl md:text-5xl font-serif text-primary leading-tight">
+                            The Peach & Berries Experience
                         </h2>
-                        <p className="text-gray-600 leading-relaxed font-light">
-                            Designed to delight, our Peach & Berries collection brings a touch of sweetness and sophistication to any routine. This curated set features our most loved essential amenities, elegantly packaged for gifting or personal indulgence.
-                        </p>
-                        <p className="text-gray-600 leading-relaxed font-light">
-                            Perfect for introducing guests to the Vaidure experience, or as a thoughtful amenity for VIP suites.
-                        </p>
+                        <div className="space-y-6 text-primary/80 font-light text-lg leading-relaxed">
+                            <p>
+                                Designed to delight the senses, our Peach & Berries collection brings a touch of vibrant sweetness and absolute sophistication to any personal care routine. This masterfully curated set features our most beloved essential amenities, elegantly presented in bespoke packaging.
+                            </p>
+                            <p>
+                                Whether utilized as a memorable VIP welcome amenity in luxury suites, a thoughtful corporate token of appreciation, or a personal indulgence, this gift set encapsulates the true essence of the VAIDURE experience.
+                            </p>
+                        </div>
 
                         <div className="pt-8">
                             <Link
                                 to="/contact"
-                                className="inline-block bg-primary text-white hover:bg-opacity-90 py-3 px-8 rounded-sm transition-all duration-300 uppercase tracking-widest text-sm shadow-md"
+                                className="inline-block bg-primary text-white hover:bg-secondary py-4 px-10 transition-colors duration-400 uppercase tracking-widest text-xs font-medium"
                             >
-                                Request Quote
+                                Request a Quote
                             </Link>
                         </div>
                     </div>
@@ -61,25 +63,28 @@ const GiftSet = () => {
             </div>
 
             {/* Features / Details */}
-            <div className="py-20 px-6 bg-[#F9F8F6]">
+            {/* Features / Details */}
+            <div className="py-32 px-6 bg-paper">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl font-serif text-primary mb-12">What's Inside</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                        <div className="bg-white p-8 shadow-sm">
-                            <h3 className="text-xl font-serif text-primary mb-4">Liquids (30ml)</h3>
-                            <ul className="space-y-3 text-gray-600 font-light">
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span>Shampoo</li>
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span>Conditioner</li>
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span>Body Wash</li>
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span>Body Lotion</li>
+                    <span className="text-secondary text-xs tracking-[0.25em] font-bold uppercase block mb-4">Curated Contents</span>
+                    <h2 className="text-4xl md:text-5xl font-serif text-primary mb-16">What's Inside</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+                        <div className="bg-white p-12 hover:shadow-lg transition-shadow duration-500">
+                            <h3 className="text-2xl font-serif text-primary mb-6 border-b border-secondary/20 pb-4">Aromatic Liquids</h3>
+                            <ul className="space-y-4 text-primary/80 font-light text-lg">
+                                <li className="flex items-center"><span className="text-secondary mr-4 text-xs">✦</span>Revitalizing Shampoo (30ml)</li>
+                                <li className="flex items-center"><span className="text-secondary mr-4 text-xs">✦</span>Nourishing Conditioner (30ml)</li>
+                                <li className="flex items-center"><span className="text-secondary mr-4 text-xs">✦</span>Refreshing Body Wash (30ml)</li>
+                                <li className="flex items-center"><span className="text-secondary mr-4 text-xs">✦</span>Hydrating Body Lotion (30ml)</li>
                             </ul>
                         </div>
-                        <div className="bg-white p-8 shadow-sm">
-                            <h3 className="text-xl font-serif text-primary mb-4">Essentials</h3>
-                            <ul className="space-y-3 text-gray-600 font-light">
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span>Luxury Soap Bar</li>
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span>Dental Kit</li>
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span>Premium Packaging</li>
+                        <div className="bg-white p-12 hover:shadow-lg transition-shadow duration-500">
+                            <h3 className="text-2xl font-serif text-primary mb-6 border-b border-secondary/20 pb-4">Refined Essentials</h3>
+                            <ul className="space-y-4 text-primary/80 font-light text-lg">
+                                <li className="flex items-center"><span className="text-secondary mr-4 text-xs">✦</span>Artisan Luxury Soap Bar</li>
+                                <li className="flex items-center"><span className="text-secondary mr-4 text-xs">✦</span>Bamboo Dental Kit</li>
+                                <li className="flex items-center"><span className="text-secondary mr-4 text-xs">✦</span>Elegant Display Box</li>
+                                <li className="flex items-center"><span className="text-secondary mr-4 text-xs">✦</span>Customizable Note Card</li>
                             </ul>
                         </div>
                     </div>

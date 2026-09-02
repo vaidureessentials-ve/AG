@@ -17,7 +17,7 @@ const Navbar = () => {
             <div className="max-w-7xl w-full mx-auto px-6 flex justify-between items-center relative">
                 {/* Mobile Menu Button - Moved to start for left positioning */}
                 <button
-                    className="md:hidden z-20 text-primary"
+                    className="lg:hidden z-20 text-primary"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {isOpen ? <X size={24} className="text-black" /> : <Menu size={24} />}
@@ -26,14 +26,14 @@ const Navbar = () => {
                 {/* Logo - Centered on Mobile using absolute positioning */}
                 <Link
                     to="/"
-                    className="text-4xl font-serif font-semibold tracking-wider absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 text-primary"
+                    className="text-4xl font-serif font-semibold tracking-wider absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 text-primary"
                     onClick={() => window.scrollTo(0, 0)}
                 >
                     VAIDURE
                 </Link>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center space-x-8">
+                <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
                     {/* Products with Mega Menu */}
                     <div className="relative group h-full flex items-center">
                         <Link
@@ -181,12 +181,12 @@ const Navbar = () => {
                 </div>
 
                 {/* Spacer for Mobile Right to balance flex (Optional, but keeps flex consistent if needed, though absolute center handles logo) */}
-                <div className="md:hidden w-6"></div>
+                <div className="lg:hidden w-6"></div>
             </div>
 
             {/* Mobile Menu Overlay */}
             {isOpen && (
-                <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-8 px-6 flex flex-col space-y-6 animate-fade-in-down h-[calc(100vh-80px)] overflow-y-auto">
+                <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-lg py-8 px-6 flex flex-col space-y-6 animate-fade-in-down h-[calc(100vh-80px)] overflow-y-auto">
                     {[
                         {
                             name: 'Products',

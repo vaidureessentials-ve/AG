@@ -3,13 +3,10 @@ import { Link } from 'react-router-dom';
 
 const CorporateGifting = () => {
     return (
-        <div className="animate-fade-in pt-20">
+        <div className="animate-fade-in pt-20 bg-background text-primary">
             {/* Hero Section */}
-            {/* Hero Section */}
-            {/* Hero Section */}
-            <div className="relative w-full h-[90vh] md:h-screen flex items-center justify-center bg-[#FDFBF7] overflow-hidden">
-                <div className="absolute inset-0 bg-black/5 z-10"></div>
-                {/* Placeholder for hero image */}
+            <div className="relative w-full h-[85vh] md:h-screen flex items-center justify-center bg-paper overflow-hidden">
+                <div className="absolute inset-0 bg-black/10 z-10"></div>
                 <img
                     src="/corporate-gifting.png"
                     alt="Corporate Gifting"
@@ -35,30 +32,32 @@ const CorporateGifting = () => {
             </div>
 
             {/* Introduction Section */}
-            <div className="py-20 md:py-32 px-6 bg-white">
+            <div className="py-32 px-6 bg-white animate-fade-in-up">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
                     <div className="w-full md:w-1/2">
                         <img
                             src="/CelebrateConnections.png"
                             alt="Sustainable Corporate Gifts"
-                            className="w-full h-auto object-cover rounded-sm shadow-xl"
+                            className="w-full h-auto object-cover"
                         />
                     </div>
-                    <div className="w-full md:w-1/2 space-y-6">
-                        <span className="text-secondary text-sm tracking-widest uppercase">Meaningful Gestures</span>
-                        <h2 className="text-3xl md:text-4xl font-serif text-primary">
-                            Celebrate Connections
+                    <div className="w-full md:w-1/2 space-y-8">
+                        <span className="text-secondary text-xs tracking-[0.25em] font-bold uppercase block">Meaningful Gestures</span>
+                        <h2 className="text-4xl md:text-5xl font-serif text-primary leading-tight">
+                            Elevate Your Professional Relationships
                         </h2>
-                        <p className="text-gray-600 leading-relaxed font-light">
-                            Vaidure offers a curated selection of premium wellness and lifestyle products perfect for corporate gifting. Whether you're celebrating milestones, appreciating employees, or strengthening client relationships, our gifts convey thoughtfulness and quality.
-                        </p>
-                        <p className="text-gray-600 leading-relaxed font-light">
-                            We specialize in sustainable luxury, ensuring your corporate gifts align with modern values of eco-responsibility and wellness.
-                        </p>
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                            {['Curated Gift Sets', 'Employee Appreciation', 'Event Giveaways', 'Client Onboarding'].map((item, index) => (
-                                <li key={index} className="flex items-center text-primary font-medium">
-                                    <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+                        <div className="space-y-6 text-primary/80 font-light text-lg leading-relaxed">
+                            <p>
+                                VAIDURE offers a curated selection of premium personal care and wellness products perfect for sophisticated corporate gifting. Whether you are celebrating milestones, expressing gratitude to employees, or strengthening client relationships, our gifts convey absolute thoughtfulness and uncompromising quality.
+                            </p>
+                            <p>
+                                We specialize in sustainable luxury, ensuring your corporate gifts align perfectly with modern values of eco-responsibility and holistic well-being. Each product is a sensory experience designed to leave a lasting, positive impression of your brand.
+                            </p>
+                        </div>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
+                            {['Curated Gift Sets', 'Employee Appreciation', 'Event & Conference Giveaways', 'Client Onboarding'].map((item, index) => (
+                                <li key={index} className="flex items-center text-primary/80 font-light">
+                                    <span className="w-1.5 h-1.5 bg-secondary rounded-full mr-4"></span>
                                     {item}
                                 </li>
                             ))}
@@ -68,49 +67,49 @@ const CorporateGifting = () => {
             </div>
 
             {/* Customization / Service Section */}
-            <div className="py-20 md:py-32 px-6 bg-[#F9F8F6]">
-                <div className="max-w-7xl mx-auto text-center mb-16">
-                    <span className="text-secondary text-sm tracking-widest uppercase block mb-3">Bespoke Services</span>
-                    <h2 className="text-3xl md:text-5xl font-serif text-primary">The Art of Gifting</h2>
+            <div className="py-32 px-6 bg-paper">
+                <div className="max-w-7xl mx-auto text-center mb-20">
+                    <span className="text-secondary text-xs tracking-[0.25em] font-bold uppercase block mb-4">Bespoke Services</span>
+                    <h2 className="text-4xl md:text-5xl font-serif text-primary">The Art of Gifting</h2>
                 </div>
 
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
                     {/* Feature 1 */}
-                    <div className="bg-white p-10 text-center shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <div className="h-16 w-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                    <div className="bg-white p-12 text-center hover:shadow-lg transition-shadow duration-500">
+                        <div className="h-16 w-16 bg-background rounded-full flex items-center justify-center mx-auto mb-8 text-secondary">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                             </svg>
                         </div>
-                        <h3 className="text-xl font-serif text-primary mb-4">Custom Branding</h3>
-                        <p className="text-gray-600 font-light text-sm leading-relaxed">
-                            Personalize packaging and products with your company logo and brand colors for a cohesive experience.
+                        <h3 className="text-2xl font-serif text-primary mb-4">Custom Branding</h3>
+                        <p className="text-primary/70 font-light text-base leading-relaxed">
+                            Personalize our luxury packaging and product labels with your corporate identity, ensuring a cohesive and memorable brand experience.
                         </p>
                     </div>
 
                     {/* Feature 2 */}
-                    <div className="bg-white p-10 text-center shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <div className="h-16 w-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                    <div className="bg-white p-12 text-center hover:shadow-lg transition-shadow duration-500">
+                        <div className="h-16 w-16 bg-background rounded-full flex items-center justify-center mx-auto mb-8 text-secondary">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                             </svg>
                         </div>
-                        <h3 className="text-xl font-serif text-primary mb-4">Volume Discounts</h3>
-                        <p className="text-gray-600 font-light text-sm leading-relaxed">
-                            Competitive pricing for bulk orders, making premium gifting accessible for events and large teams.
+                        <h3 className="text-2xl font-serif text-primary mb-4">Volume Solutions</h3>
+                        <p className="text-primary/70 font-light text-base leading-relaxed">
+                            Benefit from competitive tiered pricing structures designed specifically for large-scale corporate events, holiday gifting, and enterprise-wide programs.
                         </p>
                     </div>
 
                     {/* Feature 3 */}
-                    <div className="bg-white p-10 text-center shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <div className="h-16 w-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                    <div className="bg-white p-12 text-center hover:shadow-lg transition-shadow duration-500">
+                        <div className="h-16 w-16 bg-background rounded-full flex items-center justify-center mx-auto mb-8 text-secondary">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
                             </svg>
                         </div>
-                        <h3 className="text-xl font-serif text-primary mb-4">Premium Packaging</h3>
-                        <p className="text-gray-600 font-light text-sm leading-relaxed">
-                            Elegant, plastic-free packaging that makes unboxing a delight and reflects your commitment to sustainability.
+                        <h3 className="text-2xl font-serif text-primary mb-4">Premium Presentation</h3>
+                        <p className="text-primary/70 font-light text-base leading-relaxed">
+                            Delight your recipients with our elegant, plastic-free packaging that makes unboxing an experience in itself, reflecting your commitment to quality.
                         </p>
                     </div>
                 </div>

@@ -27,33 +27,38 @@ const WetAmenity = () => {
             </div>
 
             {/* Introduction Section */}
-            <div className="py-20 px-6 bg-white">
+            <div className="py-32 px-6 bg-white animate-fade-in-up">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
                     <div className="w-full md:w-1/2">
                         <img
                             src={wetAmenityImg}
                             alt="Premium Shampoo and Body Wash"
-                            className="w-full h-auto object-cover rounded-sm shadow-xl"
+                            className="w-full h-auto object-cover"
                         />
                     </div>
-                    <div className="w-full md:w-1/2 space-y-6">
-                        <span className="text-secondary text-sm tracking-widest uppercase">Revitalizing Care</span>
-                        <h2 className="text-3xl md:text-4xl font-serif text-primary">
-                            Nourish & Refresh
+                    <div className="w-full md:w-1/2 space-y-8">
+                        <span className="text-secondary text-xs tracking-[0.25em] font-bold uppercase">Revitalizing Care</span>
+                        <h2 className="text-4xl md:text-5xl font-serif text-primary leading-tight">
+                            Botanical Hydration
                         </h2>
-                        <p className="text-gray-600 leading-relaxed font-light">
-                            Immerse in the luxury of our wet amenities. Formulated with gentle, plant-based ingredients, our shampoos, conditioners, and body washes cleanse and hydrate without harsh chemicals.
-                        </p>
-                        <p className="text-gray-600 leading-relaxed font-light">
-                            Available in a variety of refreshing scents, including our signature Aloe & Neem and Oudh & Musk blends.
-                        </p>
+                        <div className="space-y-6 text-primary/80 font-light text-lg leading-relaxed">
+                            <p>
+                                Immerse your guests in the luxury of our wet amenities. Formulated with gentle, plant-based ingredients, our shampoos, conditioners, and body washes cleanse and hydrate without the use of harsh sulfates or parabens.
+                            </p>
+                            <p>
+                                Every drop is designed to transform a routine shower into a restorative ritual. Enriched with natural antioxidants, essential vitamins, and deep-moisturizing oils, our liquids leave skin feeling velvety and hair visibly radiant.
+                            </p>
+                            <p>
+                                Available in a variety of refreshing scent profiles, from the uplifting crispness of Citrus & Basil to the deep, grounding notes of Oudh & Musk.
+                            </p>
+                        </div>
 
                         <div className="pt-8">
                             <Link
                                 to="/contact"
-                                className="inline-block bg-primary text-white hover:bg-opacity-90 py-3 px-8 rounded-sm transition-all duration-300 uppercase tracking-widest text-sm shadow-md"
+                                className="inline-block bg-primary text-white hover:bg-secondary py-4 px-10 transition-colors duration-400 uppercase tracking-widest text-xs font-medium"
                             >
-                                Request Quote
+                                Request Samples
                             </Link>
                         </div>
                     </div>
@@ -61,98 +66,30 @@ const WetAmenity = () => {
             </div>
 
             {/* Features / Details */}
-            <div className="py-20 px-6 bg-[#F9F8F6]">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl font-serif text-primary mb-12">The Range</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                        <div className="bg-white p-8 shadow-sm">
-                            <h3 className="text-xl font-serif text-primary mb-4">Hair Care</h3>
-                            <ul className="space-y-3 text-gray-600 font-light">
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span>Nourishing Shampoo</li>
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span>Hydrating Conditioner</li>
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span>Available in 30ml bottles & dispensers</li>
+            <div className="py-32 px-6 bg-paper">
+                <div className="max-w-5xl mx-auto text-center">
+                    <span className="text-secondary text-xs tracking-[0.25em] font-bold uppercase mb-4 block">Our Formulations</span>
+                    <h2 className="text-4xl md:text-5xl font-serif text-primary mb-16">The Complete Range</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+                        <div className="bg-white p-12 hover:shadow-lg transition-shadow duration-500">
+                            <h3 className="text-2xl font-serif text-primary mb-6 border-b border-secondary/20 pb-4">Hair Care</h3>
+                            <ul className="space-y-4 text-primary/80 font-light text-lg">
+                                <li className="flex items-start"><span className="text-secondary mr-4 mt-1">✦</span><span><strong>Purifying Shampoo:</strong> Cleanses the scalp while maintaining natural oils.</span></li>
+                                <li className="flex items-start"><span className="text-secondary mr-4 mt-1">✦</span><span><strong>Hydrating Conditioner:</strong> Detangles and adds a silky, weightless shine.</span></li>
+                                <li className="flex items-start"><span className="text-secondary mr-4 mt-1">✦</span><span>Available in elegant 30ml / 50ml miniatures and 300ml / 500ml bulk refill dispensers.</span></li>
                             </ul>
                         </div>
-                        <div className="bg-white p-8 shadow-sm">
-                            <h3 className="text-xl font-serif text-primary mb-4">Body Care</h3>
-                            <ul className="space-y-3 text-gray-600 font-light">
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span>Refreshing Body Wash</li>
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span>Moisturizing Body Lotion</li>
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></span>Gentle Hand Wash</li>
+                        <div className="bg-white p-12 hover:shadow-lg transition-shadow duration-500">
+                            <h3 className="text-2xl font-serif text-primary mb-6 border-b border-secondary/20 pb-4">Body Care</h3>
+                            <ul className="space-y-4 text-primary/80 font-light text-lg">
+                                <li className="flex items-start"><span className="text-secondary mr-4 mt-1">✦</span><span><strong>Revitalizing Body Wash:</strong> A rich lather that washes away fatigue.</span></li>
+                                <li className="flex items-start"><span className="text-secondary mr-4 mt-1">✦</span><span><strong>Nourishing Body Lotion:</strong> Fast-absorbing hydration that locks in moisture all day.</span></li>
+                                <li className="flex items-start"><span className="text-secondary mr-4 mt-1">✦</span><span><strong>Gentle Hand Wash:</strong> Cleanses effectively without stripping the skin's barrier.</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
-            {/* Collections Showcase */}
-            <section className="pt-8 pb-24 px-6 bg-paper-texture">
-                <div className="max-w-7xl w-full mx-auto">
-                    <div className="text-center mb-16">
-                        <span className="text-secondary text-xs font-bold tracking-[0.25em] uppercase mb-4 block">OUR COLLECTIONS</span>
-                        <h2 className="text-4xl md:text-5xl font-serif font-medium text-primary">Crafted With Love</h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {/* Wet Amenities */}
-                        <Link to="/wet-amenity" className="group relative cursor-pointer block">
-                            <div className="overflow-hidden aspect-[4/3] mb-4">
-                                <img
-                                    src="/product-3.png"
-                                    alt="Wet Amenities"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="absolute bottom-8 left-8 text-white z-10">
-                                <h3 className="text-2xl font-serif font-medium mb-1 drop-shadow-md">Wet Amenities</h3>
-                                <p className="text-sm text-white/90 mb-3 drop-shadow-md font-light">Premium shampoos, conditioners, and body care</p>
-                                <span className="text-xs font-bold tracking-widest border-b border-white pb-1 inline-block hover:text-white/80 transition-colors drop-shadow-md">
-                                    VIEW COLLECTION →
-                                </span>
-                            </div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80 pointer-events-none"></div>
-                        </Link>
-
-                        {/* Dry Amenities */}
-                        <Link to="/dry-amenity" className="group relative cursor-pointer block">
-                            <div className="overflow-hidden aspect-[4/3] mb-4">
-                                <img
-                                    src="/product-2.png"
-                                    alt="Dry Amenities"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="absolute bottom-8 left-8 text-white z-10">
-                                <h3 className="text-2xl font-serif font-medium mb-1 drop-shadow-md">Dry Amenities</h3>
-                                <p className="text-sm text-white/90 mb-3 drop-shadow-md font-light">Complete guest care kits for hotels</p>
-                                <span className="text-xs font-bold tracking-widest border-b border-white pb-1 inline-block hover:text-white/80 transition-colors drop-shadow-md">
-                                    VIEW COLLECTION →
-                                </span>
-                            </div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80 pointer-events-none"></div>
-                        </Link>
-
-                        {/* Gift Set */}
-                        <Link to="/gift-set" className="group relative cursor-pointer block">
-                            <div className="overflow-hidden aspect-[4/3] mb-4">
-                                <img
-                                    src="/product-1.png"
-                                    alt="Gift Set"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="absolute bottom-8 left-8 text-white z-10">
-                                <h3 className="text-2xl font-serif font-medium mb-1 drop-shadow-md">Gift Set</h3>
-                                <p className="text-sm text-white/90 mb-3 drop-shadow-md font-light">Luxury personal care collection</p>
-                                <span className="text-xs font-bold tracking-widest border-b border-white pb-1 inline-block hover:text-white/80 transition-colors drop-shadow-md">
-                                    VIEW COLLECTION →
-                                </span>
-                            </div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80 pointer-events-none"></div>
-                        </Link>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };

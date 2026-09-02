@@ -171,11 +171,11 @@ const Home = () => {
             </div>
 
             {/* Collections Showcase */}
-            <section className="pt-8 pb-24 px-6 bg-paper-texture">
+            <section className="pt-24 pb-32 px-6 bg-paper">
                 <div className="max-w-7xl w-full mx-auto">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-20 animate-fade-in-up">
                         <span className="text-secondary text-xs font-bold tracking-[0.25em] uppercase mb-4 block">OUR COLLECTIONS</span>
-                        <h2 className="text-4xl md:text-5xl font-serif font-medium text-primary">Crafted With Love</h2>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-primary">Crafted With Love</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -242,14 +242,14 @@ const Home = () => {
             </section>
 
             {/* Featured Collections */}
-            <section className="pt-32 pb-24 px-6 bg-background">
+            <section className="pt-32 pb-40 px-6 bg-background">
                 <div className="max-w-7xl w-full mx-auto">
-                    <div className="flex flex-col items-center text-center mb-12">
+                    <div className="flex flex-col items-center text-center mb-20 animate-fade-in-up">
                         <div>
-                            <span className="text-secondary text-sm tracking-widest uppercase mb-2 block">Curated Selection</span>
-                            <h2 className="text-3xl md:text-4xl font-serif">Featured Collections</h2>
+                            <span className="text-secondary text-xs font-bold tracking-[0.25em] uppercase mb-4 block">Curated Selection</span>
+                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif">Featured Collections</h2>
                         </div>
-                        <Link to="/products" className="hidden md:inline-block text-primary hover:text-secondary border-b border-primary hover:border-secondary transition-colors pb-1 text-sm font-medium tracking-wide mt-6">
+                        <Link to="/products" className="hidden md:inline-block premium-link text-primary text-sm font-medium tracking-widest uppercase mt-10">
                             VIEW ALL
                         </Link>
                     </div>
@@ -272,19 +272,54 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* The VAIDURE Philosophy */}
+            <section className="py-24 md:py-32 px-6 bg-white flex items-center justify-center">
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+                    <div className="w-full md:w-1/2 order-2 md:order-1 space-y-8">
+                        <span className="text-secondary text-xs font-bold tracking-[0.25em] uppercase block">Our Philosophy</span>
+                        <h2 className="text-4xl md:text-5xl font-serif text-primary leading-tight">
+                            Conscious Luxury, Elegantly Delivered.
+                        </h2>
+                        <p className="text-primary/80 font-light text-lg leading-relaxed">
+                            We believe that true luxury should never come at the expense of our planet. VAIDURE merges the finest botanical ingredients with state-of-the-art sustainable packaging to create amenities that nourish the body and respect the earth.
+                        </p>
+                        <div className="pt-4">
+                            <Link to="/about" className="inline-block border-b border-primary pb-1 font-medium text-sm tracking-widest uppercase hover:text-secondary hover:border-secondary transition-colors">
+                                Discover Our Story
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="w-full md:w-1/2 order-1 md:order-2">
+                        {/* Placeholder image for philosophy section */}
+                        <div className="w-full h-[400px] md:h-[500px] bg-gray-100 flex items-center justify-center overflow-hidden shadow-xl">
+                            <img src="/sustainable-luxury.png" alt="Conscious luxury and sustainability" className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
+                            <span className="hidden text-gray-400 font-serif tracking-widest uppercase">Philosophy Image</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
+            {/* Newsletter Section */}
+            <section className="py-32 px-6 bg-paper text-center">
+                <div className="max-w-3xl mx-auto">
+                    <span className="text-secondary text-xs font-bold tracking-[0.25em] uppercase mb-4 block">Join The Inner Circle</span>
+                    <h2 className="text-3xl md:text-5xl font-serif text-primary mb-6">Elevate Your Inbox</h2>
+                    <p className="text-primary/70 font-light text-lg mb-10">
+                        Subscribe to receive exclusive offers, early access to new collections, and insights into sustainable hospitality.
+                    </p>
+                    <form className="flex flex-col sm:flex-row gap-4 justify-center" onSubmit={(e) => e.preventDefault()}>
+                        <input 
+                            type="email" 
+                            placeholder="Enter your email address" 
+                            className="px-6 py-4 w-full sm:w-96 bg-white border border-black/10 focus:outline-none focus:border-secondary font-light text-sm"
+                            required
+                        />
+                        <button type="submit" className="bg-primary text-white hover:bg-secondary px-8 py-4 transition-colors duration-300 uppercase tracking-widest text-xs font-medium">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </section>
         </div>
     );
 };

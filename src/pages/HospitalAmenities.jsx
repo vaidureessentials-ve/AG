@@ -21,96 +21,98 @@ const HospitalAmenities = () => {
                         Hospital Amenities
                     </h1>
                     <p className="text-white/90 font-light text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md font-serif italic">
-                        Where gentle healing meets purposeful luxury
+                        Gentle healing meets purposeful luxury.
                     </p>
                 </div>
             </div>
 
-
-
             {/* Philosophy Section */}
-            <div className="py-20 md:py-32 px-6">
-                <div className="max-w-4xl mx-auto text-center space-y-8">
-                    <h2 className="text-3xl md:text-4xl font-serif text-[#2C2C2C] leading-tight">
-                        Inspired by the delicate nature of healing and the power of purity, Vaidure Hospital Amenities represents a harmonious blend of safety and comfort.
+            <div className="py-32 px-6 bg-white animate-fade-in-up">
+                <div className="max-w-5xl mx-auto text-center space-y-8">
+                    <span className="text-secondary text-xs tracking-[0.25em] font-bold uppercase block mb-4">Mindful Care</span>
+                    <h2 className="text-4xl md:text-5xl font-serif text-primary leading-tight">
+                        Formulated for Sensitivity
                     </h2>
-                    <p className="text-gray-600 leading-relaxed font-light text-lg md:text-xl">
-                        We meticulously craft each product – from soothing body washes to gentle shampoos – to be free from harsh chemicals, ensuring a truly safe and beneficial experience for patients. Our formulations are a symphony of mild, skin-friendly ingredients, chosen for their efficacy and their ability to provide comfort during recovery. This isn't just about hygiene; it's about respecting sensitive skin with ingredients as pure as care intended.
-                    </p>
+                    <div className="text-primary/80 leading-relaxed font-light text-lg space-y-6">
+                        <p>
+                            Inspired by the delicate nature of healing, VAIDURE Hospital Amenities represents a harmonious blend of absolute safety and comforting luxury. We understand that in a healthcare environment, skin is often compromised and highly sensitive.
+                        </p>
+                        <p>
+                            Our medical-grade formulations are meticulously crafted to be hypoallergenic and free from harsh sulfates, parabens, and synthetic fragrances. We utilize ultra-mild, plant-derived cleansers that purify without stripping the skin's natural moisture barrier, ensuring a soothing experience that aids in recovery and restores dignity.
+                        </p>
+                    </div>
                 </div>
             </div>
 
             {/* Partners Section */}
-            <div className="py-20 px-6 bg-white border-y border-[#EAEaea]">
+            <div className="py-24 px-6 bg-paper">
                 <div className="max-w-4xl mx-auto text-center space-y-6">
-                    <span className="text-[#8C8C8C] text-sm tracking-[0.2em] uppercase block mb-2 font-sans">For Our Partners in Healthcare</span>
-                    <h2 className="text-2xl md:text-3xl font-serif text-[#2C2C2C]">
-                        Vaidure is more than an amenity collection; it is an extension of your hospital's commitment to patient well-being.
+                    <span className="text-secondary text-xs tracking-[0.25em] font-bold uppercase block mb-6">Partnering with Healthcare</span>
+                    <h2 className="text-3xl md:text-4xl font-serif text-primary mb-8 leading-tight">
+                        An extension of your hospital's commitment to patient well-being.
                     </h2>
-                    <p className="text-gray-600 leading-relaxed font-light">
-                        By choosing Vaidure, you offer your patients not just essential toiletries, but a touch of comfort, a moment of dignity, and a clear statement of your dedication to their holistic recovery. It's an investment in patient satisfaction and a shared vision for mindful, compassionate care.
+                    <p className="text-primary/80 leading-relaxed font-light text-lg">
+                        By choosing VAIDURE, you offer your patients more than just essential toiletries; you provide a touch of comfort and a clear statement of your dedication to their holistic recovery. It is a thoughtful investment in patient satisfaction and a shared vision for compassionate care.
                     </p>
-                    <p className="font-serif italic text-[#2C2C2C] pt-4 text-lg">
-                        Where every drop whispers care, and every touch is a promise of safety.
+                    <div className="w-16 h-[1px] bg-secondary mx-auto mt-8 mb-6"></div>
+                    <p className="font-serif italic text-primary/70 text-xl">
+                        "Where every drop whispers care, and every touch is a promise of safety."
                     </p>
                 </div>
             </div>
 
             {/* Collection Details Section - Text & Lists */}
-            <div className="py-20 md:py-32 px-6">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            <div className="py-32 px-6 bg-white">
+                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
                     {/* Text Description */}
                     <div className="space-y-6">
-                        <h2 className="text-3xl md:text-5xl font-serif text-[#2C2C2C] mb-6">Pure & Gentle</h2>
-                        <p className="text-gray-600 leading-relaxed font-light mb-6">
-                            Immerse your patients in a soothing cleanse with Vaidure's Pure & Gentle range. Formulated to be hypoallergenic and mild, these products deliver a soft, comforting lather without stripping natural moisture. They gently purify, leaving skin soft, nourished, and protected—ideal for post-operative care or sensitive skin conditions. Experience conscious care in every use.
+                        <span className="text-secondary text-xs tracking-[0.25em] font-bold uppercase block mb-4">The Collection</span>
+                        <h2 className="text-4xl md:text-5xl font-serif text-primary mb-6">Pure & Gentle Range</h2>
+                        <p className="text-primary/80 leading-relaxed font-light text-lg mb-8">
+                            Deliver a soft, comforting cleanse with our Pure & Gentle range. Formulated specifically to be hypoallergenic and mild, these products provide a delicate lather without causing irritation. Ideal for post-operative care, oncology wards, and pediatric units, our amenities ensure that every patient feels cared for and protected.
                         </p>
                         <div className="pt-8">
                             <Link
                                 to="/contact"
-                                className="inline-block bg-[#2C2C2C] text-white py-3 px-8 rounded-sm hover:bg-white hover:text-[#2C2C2C] border border-[#2C2C2C] transition-all duration-300 uppercase tracking-widest text-sm shadow-md hover:shadow-lg"
+                                className="inline-block bg-primary text-white hover:bg-secondary py-4 px-10 transition-colors duration-400 uppercase tracking-widest text-xs font-medium"
                             >
-                                Request a Sample
+                                Request Medical Samples
                             </Link>
                         </div>
                     </div>
 
                     {/* Product Lists */}
-                    <div className="space-y-12 font-light text-gray-700">
+                    <div className="space-y-12 font-light text-primary/80 p-10 bg-paper">
                         {/* Liquids */}
                         <div>
-                            <h3 className="text-xl font-serif text-[#2C2C2C] mb-4 border-b border-gray-200 pb-2">Liquids</h3>
-                            <ul className="space-y-2">
-                                <li className="flex justify-between"><span>Gentle Hair Shampoo</span> <span>30ml</span></li>
-                                <li className="flex justify-between"><span>Mild Body Wash</span> <span>30ml</span></li>
-                                <li className="flex justify-between"><span>Moisturizing Body Lotion</span> <span>30ml</span></li>
-                                <li className="flex justify-between"><span>Softening Hair Conditioner</span> <span>30ml</span></li>
-                                <li className="flex justify-between"><span>Gentle Hand Wash</span> <span>30ml</span></li>
+                            <h3 className="text-2xl font-serif text-primary mb-6 border-b border-secondary/20 pb-4">Liquids</h3>
+                            <ul className="space-y-4">
+                                <li className="flex justify-between items-center"><span className="flex items-center"><span className="text-secondary mr-3 text-xs">✦</span> Hypoallergenic Shampoo</span> <span>30ml</span></li>
+                                <li className="flex justify-between items-center"><span className="flex items-center"><span className="text-secondary mr-3 text-xs">✦</span> Mild Body Wash</span> <span>30ml</span></li>
+                                <li className="flex justify-between items-center"><span className="flex items-center"><span className="text-secondary mr-3 text-xs">✦</span> Unscented Body Lotion</span> <span>30ml</span></li>
+                                <li className="flex justify-between items-center"><span className="flex items-center"><span className="text-secondary mr-3 text-xs">✦</span> Gentle Hair Conditioner</span> <span>30ml</span></li>
                             </ul>
                         </div>
 
                         {/* Soap */}
                         <div>
-                            <h3 className="text-xl font-serif text-[#2C2C2C] mb-4 border-b border-gray-200 pb-2">Soaps</h3>
-                            <ul className="space-y-2">
-                                <li className="flex justify-between"><span>Hypoallergenic Soap (Paper Wrap)</span> <span>20g / 30g</span></li>
-                                <li className="flex justify-between"><span>Moisturizing Soap (Box Pack)</span> <span>25g / 40g</span></li>
+                            <h3 className="text-2xl font-serif text-primary mb-6 border-b border-secondary/20 pb-4">Soaps</h3>
+                            <ul className="space-y-4">
+                                <li className="flex justify-between items-center"><span className="flex items-center"><span className="text-secondary mr-3 text-xs">✦</span> Mild Glycerin Soap (Paper Wrap)</span> <span>20g / 30g</span></li>
+                                <li className="flex justify-between items-center"><span className="flex items-center"><span className="text-secondary mr-3 text-xs">✦</span> Moisturizing Soap (Box Pack)</span> <span>25g / 40g</span></li>
                             </ul>
                         </div>
 
                         {/* Accessories */}
                         <div>
-                            <h3 className="text-xl font-serif text-[#2C2C2C] mb-4 border-b border-gray-200 pb-2">Care Accessories</h3>
-                            <div className="grid grid-cols-2 gap-x-8 gap-y-2">
-                                <span>Dental Kit</span>
-                                <span>Shaving Kit</span>
-                                <span>Comb</span>
-                                <span>Shower Cap</span>
-                                <span>Loofah</span>
-                                <span>Disposal Bag</span>
-                                <span>Sewing Kit</span>
-                                <span>Vanity Kit</span>
-                                <span>Shoe Shine</span>
+                            <h3 className="text-2xl font-serif text-primary mb-6 border-b border-secondary/20 pb-4">Care Kits</h3>
+                            <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+                                <span className="flex items-center"><span className="text-secondary mr-3 text-xs">✦</span> Dental Kit</span>
+                                <span className="flex items-center"><span className="text-secondary mr-3 text-xs">✦</span> Shaving Kit</span>
+                                <span className="flex items-center"><span className="text-secondary mr-3 text-xs">✦</span> Comb</span>
+                                <span className="flex items-center"><span className="text-secondary mr-3 text-xs">✦</span> Shower Cap</span>
+                                <span className="flex items-center"><span className="text-secondary mr-3 text-xs">✦</span> Disposal Bag</span>
+                                <span className="flex items-center"><span className="text-secondary mr-3 text-xs">✦</span> Vanity Kit</span>
                             </div>
                         </div>
                     </div>

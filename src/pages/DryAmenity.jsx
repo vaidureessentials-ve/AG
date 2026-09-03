@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import dryAmenityImg from '/dry-amenity.png';
+
 
 const DryAmenity = () => {
     return (

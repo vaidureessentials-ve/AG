@@ -33,11 +33,11 @@ const Home = () => {
                 scrollContainer.scrollLeft += 1; // Adjust speed here (e.g., 0.5 for slower, 1.5 for faster)
 
                 // Seamless loop: Measure exactly where the second set starts
-                // We have 3 sets of 15 items. Reset when we reach the start of the 2nd set (item index 15)
+                // We have 3 sets of 4 items. Reset when we reach the start of the 2nd set (item index 4)
                 const items = scrollContainer.children;
-                if (items.length >= 30) { // Ensure we have rendered enough items
+                if (items.length >= 12) { // Ensure we have rendered enough items
                     const firstItemOffset = items[0].offsetLeft;
-                    const resetPoint = items[15].offsetLeft; // Start of the 2nd set
+                    const resetPoint = items[4].offsetLeft; // Start of the 2nd set
 
                     // The distance to scroll is the difference between the start of set 2 and start of set 1
                     const scrollDistance = resetPoint - firstItemOffset;
@@ -109,53 +109,20 @@ const Home = () => {
                         {/* Tripling the array for seamless infinite scroll (1/3 logic) */}
                         {[
                             // Set 1
-                            { id: 1, name: 'Handwash', src: '/assets/marquee-1.png' },
-                            { id: 2, name: 'Body Lotion', src: '/assets/marquee-2.png' },
-                            { id: 3, name: 'Shampoo', src: '/assets/marquee-3.png' },
-                            { id: 4, name: 'Conditioner', src: '/assets/marquee-4.png' },
-                            { id: 5, name: 'Shower Gel', src: '/assets/marquee-5.png' },
-                            { id: 6, name: 'Handwash', src: '/assets/marquee-6.jpg' },
-                            { id: 7, name: 'Shower Gel', src: '/assets/marquee-7.jpg' },
-                            { id: 8, name: 'Shampoo', src: '/assets/marquee-8.jpg' },
-                            { id: 9, name: 'Conditioner', src: '/assets/marquee-9.jpg' },
-                            { id: 10, name: 'Body Lotion', src: '/assets/marquee-10.png' },
-                            { id: 11, name: 'Conditioner', src: '/assets/marquee-11.png' },
-                            { id: 12, name: 'Handwash', src: '/assets/marquee-12.png' },
-                            { id: 13, name: 'Shampoo', src: '/assets/marquee-13.png' },
-                            { id: 14, name: 'Shower Gel', src: '/assets/marquee-14.png' },
-                            { id: 15, name: 'Body Lotion', src: '/assets/marquee-15.png' },
+                            { id: 1, name: 'SHOWER GEL', src: '/assets/marquee-1.png' },
+                            { id: 2, name: 'HAIR SHAMPOO', src: '/assets/marquee-2.png' },
+                            { id: 3, name: 'HAIR CONDITIONER', src: '/assets/marquee-3.png' },
+                            { id: 4, name: 'BODY LOTION', src: '/assets/marquee-4.png' },
                             // Set 2
-                            { id: 16, name: 'Handwash', src: '/assets/marquee-1.png' },
-                            { id: 17, name: 'Body Lotion', src: '/assets/marquee-2.png' },
-                            { id: 18, name: 'Shampoo', src: '/assets/marquee-3.png' },
-                            { id: 19, name: 'Conditioner', src: '/assets/marquee-4.png' },
-                            { id: 20, name: 'Shower Gel', src: '/assets/marquee-5.png' },
-                            { id: 21, name: 'Handwash', src: '/assets/marquee-6.jpg' },
-                            { id: 22, name: 'Shower Gel', src: '/assets/marquee-7.jpg' },
-                            { id: 23, name: 'Shampoo', src: '/assets/marquee-8.jpg' },
-                            { id: 24, name: 'Conditioner', src: '/assets/marquee-9.jpg' },
-                            { id: 25, name: 'Body Lotion', src: '/assets/marquee-10.png' },
-                            { id: 26, name: 'Conditioner', src: '/assets/marquee-11.png' },
-                            { id: 27, name: 'Handwash', src: '/assets/marquee-12.png' },
-                            { id: 28, name: 'Shampoo', src: '/assets/marquee-13.png' },
-                            { id: 29, name: 'Shower Gel', src: '/assets/marquee-14.png' },
-                            { id: 30, name: 'Body Lotion', src: '/assets/marquee-15.png' },
+                            { id: 5, name: 'SHOWER GEL', src: '/assets/marquee-1.png' },
+                            { id: 6, name: 'HAIR SHAMPOO', src: '/assets/marquee-2.png' },
+                            { id: 7, name: 'HAIR CONDITIONER', src: '/assets/marquee-3.png' },
+                            { id: 8, name: 'BODY LOTION', src: '/assets/marquee-4.png' },
                             // Set 3
-                            { id: 31, name: 'Handwash', src: '/assets/marquee-1.png' },
-                            { id: 32, name: 'Body Lotion', src: '/assets/marquee-2.png' },
-                            { id: 33, name: 'Shampoo', src: '/assets/marquee-3.png' },
-                            { id: 34, name: 'Conditioner', src: '/assets/marquee-4.png' },
-                            { id: 35, name: 'Shower Gel', src: '/assets/marquee-5.png' },
-                            { id: 36, name: 'Handwash', src: '/assets/marquee-6.jpg' },
-                            { id: 37, name: 'Shower Gel', src: '/assets/marquee-7.jpg' },
-                            { id: 38, name: 'Shampoo', src: '/assets/marquee-8.jpg' },
-                            { id: 39, name: 'Conditioner', src: '/assets/marquee-9.jpg' },
-                            { id: 40, name: 'Body Lotion', src: '/assets/marquee-10.png' },
-                            { id: 41, name: 'Conditioner', src: '/assets/marquee-11.png' },
-                            { id: 42, name: 'Handwash', src: '/assets/marquee-12.png' },
-                            { id: 43, name: 'Shampoo', src: '/assets/marquee-13.png' },
-                            { id: 44, name: 'Shower Gel', src: '/assets/marquee-14.png' },
-                            { id: 45, name: 'Body Lotion', src: '/assets/marquee-15.png' },
+                            { id: 9, name: 'SHOWER GEL', src: '/assets/marquee-1.png' },
+                            { id: 10, name: 'HAIR SHAMPOO', src: '/assets/marquee-2.png' },
+                            { id: 11, name: 'HAIR CONDITIONER', src: '/assets/marquee-3.png' },
+                            { id: 12, name: 'BODY LOTION', src: '/assets/marquee-4.png' },
                         ].map((item) => (
                             <div key={`item-${item.id}`} className="flex flex-col items-center flex-shrink-0 group/item min-w-[140px]">
                                 <img
@@ -292,7 +259,7 @@ const Home = () => {
                     <div className="w-full md:w-1/2 order-1 md:order-2">
                         {/* Placeholder image for philosophy section */}
                         <div className="w-full h-[400px] md:h-[500px] bg-gray-100 flex items-center justify-center overflow-hidden shadow-xl">
-                            <img src="/sustainable-luxury.png" alt="Conscious luxury and sustainability" className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
+                            <img src="/Bottom.png" alt="Conscious luxury and sustainability" className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
                             <span className="hidden text-gray-400 font-serif tracking-widest uppercase">Philosophy Image</span>
                         </div>
                     </div>

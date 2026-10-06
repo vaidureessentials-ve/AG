@@ -1,0 +1,9 @@
+# robots.txt for https://www.vaidure.com/
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.vaidure.com
+
+# Sitemap
+Sitemap: https://www.vaidure.com/sitemap.xml

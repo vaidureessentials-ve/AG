@@ -32,12 +32,12 @@ const Sustainability = () => {
         label="Our Commitment"
         title={<>Eco Materials &amp; Sustainability</>}
         subtitle="Reducing our environmental footprint without compromising the luxury experience — because the planet deserves the same care as your guests."
-        height="100vh"
+        height="60vh"
         objectPosition="center"
       />
 
       {/* ── Intro ── */}
-      <section style={{ maxWidth: 900, margin: '0 auto', padding: '6rem 2rem 3rem', textAlign: 'center' }}>
+      <section style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(3rem, 6vw, 6rem) clamp(1rem, 4vw, 2rem) 3rem', textAlign: 'center' }}>
         <div className="reveal" style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
           <SectionLabel center>Why It Matters</SectionLabel>
         </div>
@@ -62,7 +62,7 @@ const Sustainability = () => {
       </section>
 
       {/* ── 4 Commitments ── */}
-      <section style={{ background: '#fff', padding: '5rem 2rem' }}>
+      <section style={{ background: '#fff', padding: 'clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem)' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <div className="reveal" style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
@@ -73,7 +73,7 @@ const Sustainability = () => {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 270px), 1fr))', gap: '2rem' }}>
             {[
               {
                 icon: '🌿',

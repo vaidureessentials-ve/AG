@@ -10,24 +10,12 @@ const EcoMaterials = () => {
         label="Responsible Design"
         title="Eco Materials"
         subtitle="100% Post-Consumer Recycled & Bio-Based Packaging Solutions."
-        height="100vh"
+        height="60vh"
       />
 
       {/* ── Content ── */}
-      <section style={{ padding: '5rem 2rem 7rem', maxWidth: 1280, margin: '0 auto' }}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-            gap: '4rem',
-            alignItems: 'center',
-            background: '#fff',
-            padding: '3rem',
-            borderRadius: '20px',
-            boxShadow: '0 20px 50px rgba(0,0,0,0.06)',
-            border: '1px solid rgba(200,169,110,0.2)',
-          }}
-        >
+      <section className="showcase-section">
+        <div className="showcase-card">
           {/* Image */}
           <div style={{ borderRadius: '14px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', width: '100%' }}>
             <img

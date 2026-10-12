@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 
 const values = [
   { icon: '♻', title: 'Recyclable Packaging', desc: 'Biodegradable and recycled materials across all products.' },
@@ -66,7 +66,7 @@ const PhilosophySection = () => {
               </div>
 
               {/* Right: Values grid */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '1.25rem' }}>
                 {values.map((v, i) => (
                   <div
                     key={i}

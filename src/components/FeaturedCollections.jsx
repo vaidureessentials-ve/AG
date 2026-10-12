@@ -76,12 +76,12 @@ const FeaturedCollections = () => {
           </div>
 
           {/* Collections grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.5rem' }}>
             {collections.map((item, i) => (
               <div
                 key={i}
                 className={`reveal reveal-delay-${i + 1}`}
-                style={{ position: 'relative', height: 440, overflow: 'hidden', cursor: 'pointer' }}
+                style={{ position: 'relative', height: 'clamp(340px, 60vw, 440px)', overflow: 'hidden', cursor: 'pointer' }}
                 onMouseEnter={e => {
                   e.currentTarget.querySelector('img').style.transform = 'scale(1.1)';
                   e.currentTarget.querySelector('.fc-overlay').style.opacity = '1';

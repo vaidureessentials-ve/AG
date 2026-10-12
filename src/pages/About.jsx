@@ -42,7 +42,7 @@ const About = () => {
         label="Our Story"
         title="The Essence of Vaidure"
         subtitle="Born from a passion for sustainable luxury, crafted for the world's finest hotels and resorts."
-        height="110vh"
+        height="60vh"
         objectFit="cover"
         objectPosition="center 15%"
         disableParallax={true}
@@ -111,7 +111,7 @@ const About = () => {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2.5rem' }}>
             {[
               {
                 icon: '🌿',
@@ -136,7 +136,7 @@ const About = () => {
                 key={pillar.title}
                 className="reveal hover-lift"
                 style={{
-                  padding: '2.5rem',
+                  padding: 'clamp(1.5rem, 4vw, 2.5rem)',
                   borderTop: '2px solid var(--gold)',
                   background: 'var(--cream)',
                   display: 'flex',
@@ -179,13 +179,13 @@ const About = () => {
         </div>
       </section>
 
-      <section style={{ padding: '5rem 2rem', maxWidth: 1100, margin: '0 auto' }}>
+      <section style={{ padding: 'clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem)', maxWidth: 1100, margin: '0 auto' }}>
         {/* ── Story Image + Quote ── */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '4rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+            gap: 'clamp(2rem, 5vw, 4rem)',
             alignItems: 'center',
             marginBottom: '5rem',
           }}
@@ -247,7 +247,7 @@ const About = () => {
               Crafted with Precision
             </h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '2rem' }}>
             {[
               { step: '01', title: 'Ethical Sourcing', desc: 'We travel the world to source the finest botanical ingredients directly from sustainable farms.' },
               { step: '02', title: 'Artisan Formulation', desc: 'Our master formulators blend potent extracts in small batches to preserve their efficacy and natural scent.' },

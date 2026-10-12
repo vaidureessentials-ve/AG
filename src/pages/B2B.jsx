@@ -30,12 +30,12 @@ const B2B = () => {
         label="Wholesale & Partnerships"
         title="B2B Solutions"
         subtitle="Partner with VAIDURE to elevate your hotel or resort's amenity offerings with scalable, sustainable, and beautifully branded solutions."
-        height="100vh"
+        height="60vh"
         objectPosition="center"
       />
 
       {/* ── Intro ── */}
-      <section style={{ maxWidth: 900, margin: '0 auto', padding: '6rem 2rem 3rem', textAlign: 'center' }}>
+      <section style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(3rem, 6vw, 6rem) clamp(1rem, 4vw, 2rem) 3rem', textAlign: 'center' }}>
         <div className="reveal" style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
           <SectionLabel>Why Partner With Us</SectionLabel>
         </div>
@@ -52,8 +52,8 @@ const B2B = () => {
       </section>
 
       {/* ── Features + Image ── */}
-      <section style={{ padding: '4rem 2rem 6rem', maxWidth: 1100, margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+      <section style={{ padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1rem, 4vw, 2rem) clamp(3.5rem, 6vw, 6rem)', maxWidth: 1100, margin: '0 auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'center' }}>
 
           {/* Left: text */}
           <div className="reveal-left">
@@ -157,7 +157,7 @@ const B2B = () => {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '2rem' }}>
             {[
               {
                 step: '01',

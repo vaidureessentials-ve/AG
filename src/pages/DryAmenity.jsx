@@ -10,27 +10,15 @@ const DryAmenity = () => {
         label="Essential Comfort"
         title="Dry Amenities"
         subtitle="Thoughtfully designed sustainable guest essentials for luxury hospitality."
-        height="100vh"
+        height="60vh"
         objectFit="cover"
         objectPosition="center"
         disableParallax={true}
       />
 
       {/* ── Product Showcase ── */}
-      <section style={{ padding: '5rem 2rem 7rem', maxWidth: 1280, margin: '0 auto' }}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-            gap: '4rem',
-            alignItems: 'center',
-            background: '#fff',
-            padding: '3rem',
-            borderRadius: '20px',
-            boxShadow: '0 20px 50px rgba(0,0,0,0.06)',
-            border: '1px solid rgba(200,169,110,0.2)',
-          }}
-        >
+      <section className="showcase-section">
+        <div className="showcase-card">
           {/* Product Images - Stacked vertically */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', width: '100%' }}>
             <div style={{ borderRadius: '14px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.08)' }}>

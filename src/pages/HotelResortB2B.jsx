@@ -10,25 +10,13 @@ const HotelResortB2B = () => {
         label="Luxury Hospitality"
         title="Hotel & Resort Amenities"
         subtitle="Turnkey Luxury Personal Care & Amenity Solutions for 5-Star Hotels & Heritage Resorts."
-        height="100vh"
+        height="60vh"
         objectPosition="center"
       />
 
       {/* ── Content ── */}
-      <section style={{ padding: '5rem 2rem 7rem', maxWidth: 1280, margin: '0 auto' }}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-            gap: '4rem',
-            alignItems: 'center',
-            background: '#fff',
-            padding: '3rem',
-            borderRadius: '20px',
-            boxShadow: '0 20px 50px rgba(0,0,0,0.06)',
-            border: '1px solid rgba(200,169,110,0.2)',
-          }}
-        >
+      <section className="showcase-section">
+        <div className="showcase-card">
           {/* Image */}
           <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
             <img

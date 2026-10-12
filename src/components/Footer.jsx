@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getISTTimestamp, getPageUrl } from '../utils/formHelper';
 
 const footerLinks = {
   Products: [
@@ -46,11 +47,58 @@ const socialLinks = [
 
 const Footer = () => {
   const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
+  const [status, setStatus] = useState('idle'); // idle | submitting | success | needs_activation | error
+  const [msg, setMsg] = useState('');
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
-    if (email) { setSubscribed(true); setEmail(''); }
+    if (!email) return;
+    setStatus('submitting');
+    setMsg('');
+    const form = e.target;
+    const istTime = getISTTimestamp();
+    const pageUrl = getPageUrl();
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/info@vaidure.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: `New Newsletter Subscription (${email}) - ${istTime}`,
+          _template: 'table',
+          _captcha: 'false',
+          Email: email,
+          Source: 'Website Footer Newsletter',
+          'Subscription Time (IST)': istTime,
+          'Submitted From': pageUrl,
+        }),
+      });
+
+      const result = await res.json();
+      if (result.success === 'true' || result.success === true) {
+        setStatus('success');
+        setEmail('');
+      } else if (result.message && result.message.toLowerCase().includes('activation')) {
+        setStatus('needs_activation');
+        setMsg("Activation Required: Please click 'Activate Form' in the email sent to info@vaidure.com.");
+      } else {
+        setStatus('error');
+        setMsg(result.message || 'Unable to subscribe. Please try again.');
+      }
+    } catch {
+      if (form && form.elements && form.elements['Subscription Time (IST)']) {
+        form.elements['Subscription Time (IST)'].value = istTime;
+      }
+      if (form && typeof form.submit === 'function') {
+        form.submit();
+      } else {
+        setStatus('error');
+        setMsg('Network error. Please try again.');
+      }
+    }
   };
 
   return (
@@ -151,14 +199,31 @@ const Footer = () => {
               <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.82rem', lineHeight: 1.7, fontWeight: 300, marginBottom: '1.25rem' }}>
                 Subscribe to receive updates on new luxury collections and sustainability initiatives.
               </p>
-              {subscribed ? (
-                <div style={{ color: 'var(--gold)', fontSize: '0.85rem', fontWeight: 400, padding: '0.75rem 1rem', background: 'rgba(200,169,110,0.1)', border: '1px solid rgba(200,169,110,0.3)', borderRadius: 4 }}>
-                  Thank you for subscribing!
+              {status === 'success' ? (
+                <div style={{ color: 'var(--gold)', fontSize: '0.85rem', fontWeight: 400, padding: '0.75rem 1rem', background: 'rgba(200,169,110,0.1)', border: '1px solid rgba(200,169,110,0.3)', borderRadius: 4, lineHeight: 1.5 }}>
+                  ✓ Thank you for subscribing! Your email has been registered.
                 </div>
               ) : (
-                <form onSubmit={handleSubscribe} style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                <form onSubmit={handleSubscribe} action="https://formsubmit.co/info@vaidure.com" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_subject" value="New Newsletter Subscription" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="Subscription Time (IST)" value={getISTTimestamp()} />
+                  <input type="hidden" name="Submitted From" value={getPageUrl()} />
+                  <input type="hidden" name="_next" value={getPageUrl()} />
+                  {status === 'needs_activation' && (
+                    <div style={{ color: '#fcd34d', fontSize: '0.76rem', padding: '0.55rem 0.75rem', background: 'rgba(217,119,6,0.18)', border: '1px solid #d97706', borderRadius: 4, lineHeight: 1.4 }}>
+                      ⚠️ {msg}
+                    </div>
+                  )}
+                  {status === 'error' && (
+                    <div style={{ color: '#fca5a5', fontSize: '0.76rem', padding: '0.55rem 0.75rem', background: 'rgba(220,38,38,0.18)', border: '1px solid #dc2626', borderRadius: 4, lineHeight: 1.4 }}>
+                      ✕ {msg}
+                    </div>
+                  )}
                   <input
                     type="email"
+                    name="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
@@ -180,6 +245,7 @@ const Footer = () => {
                   />
                   <button
                     type="submit"
+                    disabled={status === 'submitting'}
                     className="btn-gold"
                     style={{
                       width: '100%',
@@ -188,10 +254,12 @@ const Footer = () => {
                       borderRadius: '4px',
                       fontSize: '0.78rem',
                       letterSpacing: '0.12em',
-                      fontFamily: '"Inter", sans-serif'
+                      fontFamily: '"Inter", sans-serif',
+                      opacity: status === 'submitting' ? 0.7 : 1,
+                      cursor: status === 'submitting' ? 'wait' : 'pointer',
                     }}
                   >
-                    <span>Subscribe</span>
+                    <span>{status === 'submitting' ? 'Subscribing...' : 'Subscribe'}</span>
                   </button>
                 </form>
               )}

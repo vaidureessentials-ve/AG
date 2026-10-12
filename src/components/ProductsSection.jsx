@@ -39,7 +39,7 @@ const ProductsSection = () => {
       {/* Background decoration */}
       <div style={{ position: 'absolute', bottom: 0, left: -100, width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(200,169,110,0.06), transparent 70%)', filter: 'blur(80px)', pointerEvents: 'none' }} />
 
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 clamp(1rem, 4vw, 2rem)' }}>
         {/* Section header */}
         <div className="reveal" style={{ textAlign: 'center', marginBottom: '5rem' }}>
           <div className="section-label" style={{ justifyContent: 'center' }}>Our Collections</div>
@@ -52,7 +52,7 @@ const ProductsSection = () => {
         </div>
 
         {/* Product Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
           {products.map((product, index) => (
             <div
               key={index}
@@ -69,7 +69,7 @@ const ProductsSection = () => {
               onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 30px rgba(0,0,0,0.07)'; }}
             >
               {/* Image container */}
-              <div style={{ height: 360, overflow: 'hidden', position: 'relative', background: '#f8f4ec' }}>
+              <div style={{ height: 'clamp(260px, 45vw, 360px)', overflow: 'hidden', position: 'relative', background: '#f8f4ec' }}>
                 <img
                   src={product.image}
                   alt={product.title}

@@ -33,22 +33,22 @@ const Products = () => {
         label="Luxury Amenities"
         title="Our Signature Amenities"
         subtitle="Meticulously crafted with botanical ingredients to nourish the skin, delight the senses, and define the luxury hospitality experience."
-        height="100vh"
+        height="60vh"
         objectPosition="center"
         disableParallax={true}
       />
 
       {/* ── Product Categories ── */}
-      <section style={{ padding: '5rem 2rem', background: '#fff', borderTop: '1px solid #eaeaea' }}>
+      <section style={{ padding: 'clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem)', background: '#fff', borderTop: '1px solid #eaeaea' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'clamp(1.5rem, 4vw, 3rem)' }}>
             {[
               { name: 'GIFT SET', img: '/images/gift.png', path: '/products/gift-set', pos: 'center' },
               { name: 'DRY AMENITY', img: '/images/dry.png', path: '/products/dry-amenity', pos: 'center 25%' },
               { name: 'WET AMENITY', img: '/images/wet.png', path: '/products/wet-amenity', pos: 'center' },
             ].map((category) => (
               <Link key={category.name} to={category.path} className="reveal hover-lift" style={{ textAlign: 'center', cursor: 'pointer', textDecoration: 'none', display: 'block' }}>
-                <div style={{ overflow: 'hidden', marginBottom: '1.5rem', height: 320, borderRadius: '12px', boxShadow: '0 8px 30px rgba(0,0,0,0.08)', background: '#f5f2eb' }}>
+                <div style={{ overflow: 'hidden', marginBottom: '1.5rem', height: 'clamp(240px, 45vw, 320px)', borderRadius: '12px', boxShadow: '0 8px 30px rgba(0,0,0,0.08)', background: '#f5f2eb' }}>
                   <img
                     src={category.img}
                     alt={category.name}
@@ -105,7 +105,7 @@ const Products = () => {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '2rem' }}>
             {[
               {
                 icon: '🌿',

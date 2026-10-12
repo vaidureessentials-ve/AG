@@ -30,14 +30,14 @@ const Customization = () => {
         label="Tailored Elegance"
         title={<>Private Label &amp; Customization</>}
         subtitle="Create a signature experience that your guests will never forget — from bespoke fragrances to fully branded packaging, made entirely around your vision."
-        height="56.25vw"
+        height="60vh"
         objectPosition="center"
         disableParallax={true}
         objectFit="cover"
       />
 
       {/* ── Intro ── */}
-      <section style={{ maxWidth: 900, margin: '0 auto', padding: '6rem 2rem 3rem', textAlign: 'center' }}>
+      <section style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(3rem, 6vw, 6rem) clamp(1rem, 4vw, 2rem) 3rem', textAlign: 'center' }}>
         <div className="reveal" style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
           <SectionLabel>What We Offer</SectionLabel>
         </div>
@@ -63,7 +63,7 @@ const Customization = () => {
 
 
       {/* ── What's Included ── */}
-      <section style={{ background: '#fff', padding: '5rem 2rem' }}>
+      <section style={{ background: '#fff', padding: 'clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
           <div className="reveal" style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
             <SectionLabel>Every Package Includes</SectionLabel>
@@ -71,7 +71,7 @@ const Customization = () => {
           <h2 className="reveal" style={{ fontFamily: '"Playfair Display", serif', fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', color: 'var(--primary)', fontWeight: 500, marginBottom: '3rem' }}>
             No Hidden Costs. No Surprises.
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '1.5rem' }}>
             {[
               { icon: '🎨', label: 'Custom Label & Packaging Design' },
               { icon: '📸', label: 'Professional Product Photography' },

@@ -87,7 +87,7 @@ const Navbar = () => {
           boxShadow: isScrolled ? '0 4px 30px rgba(0,0,0,0.06)' : 'none',
         }}
       >
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 clamp(1rem, 3.5vw, 2rem)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
 
           {/* Logo */}
           <Link
@@ -102,7 +102,7 @@ const Navbar = () => {
           >
             <span style={{
               fontFamily: '"Playfair Display", Georgia, serif',
-              fontSize: '1.9rem',
+              fontSize: 'clamp(1.4rem, 4.5vw, 1.9rem)',
               fontWeight: 800,
               letterSpacing: '0.2em',
               color: isScrolled ? 'var(--primary)' : '#fff',
@@ -293,11 +293,11 @@ const Navbar = () => {
 
       {/* Responsive helpers */}
       <style>{`
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .hidden-mobile { display: none !important; }
           .show-mobile { display: flex !important; }
         }
-        @media (min-width: 769px) {
+        @media (min-width: 1025px) {
           .show-mobile { display: none !important; }
           .hidden-mobile { display: flex !important; }
         }
@@ -312,8 +312,9 @@ const Navbar = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgba(0,0,0,0.6)',
+            background: 'rgba(0,0,0,0.65)',
             backdropFilter: 'blur(4px)',
+            WebkitBackdropFilter: 'blur(4px)',
             zIndex: 998,
             animation: 'scaleIn 0.3s ease both',
           }}
@@ -326,16 +327,18 @@ const Navbar = () => {
           position: 'fixed',
           top: 0,
           right: 0,
-          width: 'min(85vw, 360px)',
+          width: 'min(88vw, 360px)',
           height: '100vh',
           background: 'var(--primary)',
           zIndex: 999,
           display: 'flex',
           flexDirection: 'column',
-          padding: '6rem 2.5rem 3rem',
+          padding: '5rem clamp(1.5rem, 5vw, 2.5rem) 2.5rem',
           transform: menuOpen ? 'translateX(0)' : 'translateX(100%)',
-          transition: 'transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94)',
+          transition: 'transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94)',
           borderLeft: '1px solid rgba(200,169,110,0.2)',
+          overflowY: 'auto',
+          WebkitOverflowScrolling: 'touch',
         }}
       >
         {/* Decorative orb */}
@@ -351,7 +354,7 @@ const Navbar = () => {
         </div>
 
         <nav className="mobile-nav-scroll" style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', flex: 1, overflowY: 'auto' }}>
-          {navLinks.map((link, i) => (
+          {navLinks.map((link) => (
             <div key={link.to} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '0.5rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Link

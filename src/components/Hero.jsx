@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
+import { getISTTimestamp, getPageUrl } from '../utils/formHelper';
 
 const Hero = () => {
   const bgRef = useRef(null);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => {
       if (bgRef.current) {
         const y = window.scrollY;
@@ -15,6 +14,56 @@ const Hero = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const [formStatus, setFormStatus] = useState('idle');
+  const [formMsg, setFormMsg] = useState('');
+
+  const handleHeroSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+    setFormMsg('');
+    const form = e.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    const istTime = getISTTimestamp();
+    const pageUrl = getPageUrl();
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/info@vaidure.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: `New Inquiry from Hero Form (${data.Name || 'Visitor'}) - ${istTime}`,
+          _template: 'table',
+          _captcha: 'false',
+          ...data,
+          'Submission Time (IST)': istTime,
+          'Submitted From': pageUrl,
+        }),
+      });
+
+      const result = await res.json();
+      if (result.success === 'true' || result.success === true) {
+        setFormStatus('success');
+        form.reset();
+      } else if (result.message && result.message.toLowerCase().includes('activation')) {
+        setFormStatus('needs_activation');
+        setFormMsg("Activation Required: An activation email from FormSubmit was sent to info@vaidure.com. Please click 'Activate Form' in your inbox to enable email forwarding.");
+      } else {
+        setFormStatus('error');
+        setFormMsg(result.message || 'Unable to send message. Please try again.');
+      }
+    } catch {
+      // Fallback to normal form submit if fetch fails (e.g. strict browser blockers)
+      if (form.elements['Submission Time (IST)']) {
+        form.elements['Submission Time (IST)'].value = istTime;
+      }
+      form.submit();
+    }
+  };
 
   return (
     <section className="hero-section" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden', background: '#0d0d0d' }}>
@@ -76,8 +125,6 @@ const Hero = () => {
               Premium hotel toiletries and body care solutions designed for modern hospitality and conscious consumers. Experience the true essence of luxury.
             </p>
 
-
-
             {/* CTAs */}
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', animation: 'heroin 0.9s ease 0.85s both' }}>
               <a href="/products" className="btn-gold" style={{ fontFamily: '"Inter", sans-serif' }}>
@@ -99,14 +146,38 @@ const Hero = () => {
                 <h3 style={{ fontFamily: '"Playfair Display", serif', fontSize: '1.55rem', color: '#fff', marginTop: '0.4rem', fontWeight: 500 }}>Let's Create Together</h3>
                 <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.8rem', marginTop: '0.3rem' }}>Tell us about your hotel's vision</p>
               </div>
-              <form action="https://formsubmit.co/info@vaidure.com" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+
+              {formStatus === 'success' && (
+                <div style={{ padding: '0.85rem 1rem', background: 'rgba(200,169,110,0.15)', border: '1px solid var(--gold)', borderRadius: 4, color: 'var(--gold-light)', fontSize: '0.82rem', marginBottom: '1rem', lineHeight: 1.5 }}>
+                  ✓ Thank you! Your message has been sent successfully. We will get back to you shortly.
+                </div>
+              )}
+
+              {formStatus === 'needs_activation' && (
+                <div style={{ padding: '0.85rem 1rem', background: 'rgba(217,119,6,0.18)', border: '1px solid #d97706', borderRadius: 4, color: '#fcd34d', fontSize: '0.8rem', marginBottom: '1rem', lineHeight: 1.5 }}>
+                  ⚠️ {formMsg}
+                </div>
+              )}
+
+              {formStatus === 'error' && (
+                <div style={{ padding: '0.85rem 1rem', background: 'rgba(220,38,38,0.18)', border: '1px solid #dc2626', borderRadius: 4, color: '#fca5a5', fontSize: '0.8rem', marginBottom: '1rem', lineHeight: 1.5 }}>
+                  ✕ {formMsg}
+                </div>
+              )}
+
+              <form onSubmit={handleHeroSubmit} action="https://formsubmit.co/info@vaidure.com" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                 <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_subject" value="New Inquiry from Vaidure Hero Form" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="Submission Time (IST)" value={getISTTimestamp()} />
+                <input type="hidden" name="Submitted From" value={getPageUrl()} />
+                <input type="hidden" name="_next" value={getPageUrl()} />
                 {[{ p: 'Your Name', t: 'text', id: 'h-name', n: 'Name' }, { p: 'Phone Number', t: 'tel', id: 'h-phone', n: 'Phone' }, { p: 'Email Address', t: 'email', id: 'h-email', n: 'Email' }].map(f => (
                   <input key={f.id} id={f.id} name={f.n} type={f.t} placeholder={f.p} required className="vaidure-input" style={{ fontFamily: '"Inter", sans-serif' }} />
                 ))}
                 <textarea id="h-msg" name="Message" placeholder="Tell us about your requirements..." rows={3} required className="vaidure-input" style={{ fontFamily: '"Inter", sans-serif', resize: 'none' }} />
-                <button type="submit" className="btn-gold" style={{ width: '100%', justifyContent: 'center', marginTop: '0.25rem', fontFamily: '"Inter", sans-serif' }}>
-                  <span>Send Message</span>
+                <button type="submit" disabled={formStatus === 'submitting'} className="btn-gold" style={{ width: '100%', justifyContent: 'center', marginTop: '0.25rem', fontFamily: '"Inter", sans-serif', opacity: formStatus === 'submitting' ? 0.7 : 1, cursor: formStatus === 'submitting' ? 'wait' : 'pointer' }}>
+                  <span>{formStatus === 'submitting' ? 'Sending...' : 'Send Message'}</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
               </form>

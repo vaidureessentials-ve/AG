@@ -39,10 +39,11 @@ const PageHero = ({
 
   return (
     <section
+      className="page-hero-container"
       style={{
         position: 'relative',
         height,
-        minHeight: 420,
+        minHeight: 400,
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
@@ -86,10 +87,12 @@ const PageHero = ({
           zIndex: 10,
           maxWidth: 1280,
           margin: '0 auto',
-          padding: '0 2rem',
+          padding: '0 clamp(1rem, 4vw, 2rem)',
           width: '100%',
-          paddingTop: '6rem',
+          paddingTop: 'clamp(4.5rem, 9vw, 6rem)',
+          paddingBottom: 'clamp(2rem, 5vw, 3rem)',
           textAlign: 'center',
+          boxSizing: 'border-box',
         }}
       >
         {label && (
@@ -121,12 +124,13 @@ const PageHero = ({
         <h1
           style={{
             fontFamily: '"Playfair Display", Georgia, serif',
-            fontSize: 'clamp(2.4rem, 6vw, 5rem)',
+            fontSize: 'clamp(2rem, 5.5vw, 4.5rem)',
             fontWeight: 600,
             color: '#fff',
-            lineHeight: 1.1,
+            lineHeight: 1.15,
             marginBottom: '1rem',
             animation: 'heroin 0.9s ease 0.35s both',
+            wordBreak: 'break-word',
           }}
         >
           {title}

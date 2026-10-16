@@ -59,8 +59,8 @@ const FeaturedCollections = () => {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '4rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div className="reveal-left">
               <div className="section-label">Curated Selection</div>
-              <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: 600, color: 'var(--primary)', lineHeight: 1.1 }}>
-                Our Featured<br /><em style={{ color: 'var(--gold)' }}>Collections</em>
+              <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: 600, color: 'var(--primary)', lineHeight: 1.2 }}>
+                Our Featured <em style={{ color: 'var(--gold)' }}>Collections</em>
               </h2>
             </div>
             <div className="reveal-right">

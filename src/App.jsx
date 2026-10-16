@@ -20,6 +20,7 @@ import PrivateLabel from './pages/PrivateLabel';
 import PackagingCustomization from './pages/PackagingCustomization';
 import HotelResortB2B from './pages/HotelResortB2B';
 import HospitalAmenitiesB2B from './pages/HospitalAmenitiesB2B';
+import Invoice from './pages/Invoice';
 
 function MainApp() {
   const glowRef = useRef(null);
@@ -52,12 +53,24 @@ function MainApp() {
     return () => observer.disconnect();
   }, [location.pathname]);
 
+  const isInvoicePage = location.pathname === '/invoice';
+
   return (
     <>
       {/* Cursor glow */}
       <div ref={glowRef} className="cursor-glow" aria-hidden="true" />
-      <div style={{ fontFamily: 'var(--font-sans)', color: 'var(--primary)', background: 'var(--cream)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-        <Navbar />
+      <div
+        className="app-main-layout"
+        style={{
+          fontFamily: 'var(--font-sans)',
+          color: 'var(--primary)',
+          background: isInvoicePage ? '#ffffff' : 'var(--cream)',
+          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column'
+        }}
+      >
+        {!isInvoicePage && <Navbar />}
         <main style={{ flex: 1 }}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -76,9 +89,10 @@ function MainApp() {
             <Route path="/b2b/hospital-amenities" element={<HospitalAmenitiesB2B />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/invoice" element={<Invoice />} />
           </Routes>
         </main>
-        <Footer />
+        {!isInvoicePage && <Footer />}
       </div>
     </>
   );

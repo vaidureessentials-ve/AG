@@ -521,3 +521,11 @@ html, body {
   }
 }
 
+/* Print Global Reset */
+@media print {
+  html, body, #root, .app-main-layout {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+}
+

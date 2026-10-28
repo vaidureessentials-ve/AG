@@ -2,6 +2,13 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getISTTimestamp, getPageUrl } from '../utils/formHelper';
 
+const sectionRoutes = {
+  Products: '/products',
+  Sustainability: '/sustainability',
+  Customization: '/customization',
+  B2B: '/b2b',
+};
+
 const footerLinks = {
   Products: [
     { label: 'Gift Sets', to: '/products/gift-set' },
@@ -9,12 +16,10 @@ const footerLinks = {
     { label: 'Wet Amenities', to: '/products/wet-amenity' },
   ],
   Sustainability: [
-    { label: 'Overview', to: '/sustainability' },
     { label: 'Eco Materials', to: '/sustainability/eco-materials' },
     { label: 'Refill Program', to: '/sustainability/refill-program' },
   ],
   Customization: [
-    { label: 'Overview', to: '/customization' },
     { label: 'Private Label', to: '/customization/private-label' },
     { label: 'Custom Packaging', to: '/customization/packaging' },
   ],
@@ -136,7 +141,7 @@ const Footer = () => {
                   <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.78rem', lineHeight: 1.6 }}>Orbit Mall, Vijay Nagar, Indore, MP 452010</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.6)" strokeWidth="2" strokeLinecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l1.65-1.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.6)" strokeWidth="2" strokeLinecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l1.65-1.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                   <a href="tel:+919522700027" style={{ textDecoration: 'none' }}>
                     <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', fontWeight: 500 }}>+91 95227 00027</span>
                   </a>
@@ -172,7 +177,14 @@ const Footer = () => {
             {Object.entries(footerLinks).map(([section, links]) => (
               <div key={section}>
                 <h4 style={{ fontFamily: '"Playfair Display", serif', fontSize: '1rem', fontWeight: 600, color: '#fff', marginBottom: '1.5rem', letterSpacing: '0.02em' }}>
-                  {section}
+                  <Link
+                    to={sectionRoutes[section] || '#'}
+                    style={{ color: '#fff', textDecoration: 'none', transition: 'color 0.3s' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#fff')}
+                  >
+                    {section}
+                  </Link>
                 </h4>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   {links.map(({ label, to }) => (
@@ -288,6 +300,5 @@ const Footer = () => {
     </footer>
   );
 };
-
 
 export default Footer;
